@@ -43,9 +43,9 @@ void manipulating(void) {
 
         // Prompt the user for the second string
         printf("Type the 2nd string:\n");
-        fgets(string2, BUFFER_SIZE, stdin);
+        fgets(string2, BUFFER_SIZE, stdin); // Read the second input string from user
         // Remove the newline character at the end of the input string
-        string2[strlen(string2) - 1] = '\0'; // Read the second input string from user
+        string2[strlen(string2) - 1] = '\0'; 
 
         // Concatenate the string2 to the string1
         strcat(string1, string2);
