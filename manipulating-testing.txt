@@ -1,0 +1,44 @@
+Manipulating Testing 
+
+------Version 1-------
+Test 1: (Normal case)
+Type the 1st string (q - to quit):
+John
+Type the 2nd string:
+ Simith
+Concatenated string is 'John Simith'
+
+Test 2: (Empty string)
+Type the 1st string (q - to quit):
+
+Type the 2nd string:
+
+Concatenated string is ''
+
+Test 3: (Edge case)
+Type the 1st string (q - to quit):
+Hi John Smith
+Type the 2nd string:
+ Nice to meet you!
+Concatenated string is 'Hi John Smith Nice to meet you!'
+
+Test 4: (Over-the-edge: string1 over the limit)
+Type the 1st string (q - to quit):
+Hello this is John Smith, Nice to meet you!
+Type the 2nd string:
+Concatenated string is 'Hello this is John Smith, Niceto meet you!'
+
+Test 5: (Over-the-edge: string2 over the limit)
+Type the 1st string (q - to quit):
+12345
+Type the 2nd string:
+Hi John Smith Nice to meet you!
+Concatenated string is '12345Hi John Smith Nice to meet you'
+
+Test 6: (Over-the-edge: after concatenation string1 over the limit)
+Type the 1st string (q - to quit):
+Hello this is John Smith,
+Type the 2nd string:
+ Nice to meet you!
+Concatenated string is 'Hello this is John Smith, Nice to meet you!'
+
