@@ -42,3 +42,53 @@ Type the 2nd string:
  Nice to meet you!
 Concatenated string is 'Hello this is John Smith, Nice to meet you!'
 
+------Version 2-------
+Test 1: (Identical)
+Type the 1st string to compare (q - to quit):
+test
+Type the 2nd string to compare:
+test
+"test" string is equal to "test"
+
+Test 2: (Case sensitive)
+Type the 1st string to compare (q - to quit):
+Test
+Type the 2nd string to compare:
+test
+"Test" string is less than "test"
+
+Test 3: (Different length)
+Type the 1st string to compare (q - to quit):
+Hello World
+Type the 2nd string to compare:
+Hello
+"Hello World" string is greater than "Hello"
+
+Test 4: (Empty string)
+Type the 1st string to compare (q - to quit):
+
+Type the 2nd string to compare:
+
+"" string is equal to ""
+
+Test 5: (Special characters)
+Type the 1st string to compare (q - to quit):
+@123
+Type the 2nd string to compare:
+$456
+"@123" string is greater than "$456"
+
+Test 6: (Over-the-edge: compare1 over the limit)
+Type the 1st string to compare (q - to quit):
+Hello this is John Smith, Nice to meet you!
+Type the 2nd string to compare:
+"Hello this is John Smith, Nice" string is less than "to meet you!"
+
+Test 7: (Over-the-edge: compare2 over the limit)
+Type the 1st string to compare (q - to quit):
+Hello this is John Smith, Nice
+Type the 2nd string to compare:
+Hello this is John Smith, Nice to meet you!
+"Hello this is John Smith, Nice" string is equal to "Hello this is John Smith, Nice"
+Type the 1st string to compare (q - to quit):
+Type the 2nd string to compare:
