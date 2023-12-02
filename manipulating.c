@@ -9,9 +9,9 @@ Final Project
 */
 
 /* The costomized library "manipulating.h" header file provides :
-    2 standard libraies: stdio.h and string.h
-    Defined macro 'BUFFER_SIZE' setting the max string length for manipulation
-    Prototype for function manipulating
+    - 2 standard libraies: stdio.h and string.h
+    - Defined macro 'BUFFER_SIZE' setting the max string length for manipulation
+    - Prototype for function manipulating
 */
 #include "manipulating.h"   
 
@@ -26,10 +26,10 @@ void manipulating(void) {
     // Display the staring message for user to understand the purpose of this demo
     //printf("**** Start of Concatenating Strings Demo ****\n");
     //// Declare 2 Cstring to store the string for concatenation 
-    //char string1[BUFFER_SIZE]; // first string 
-    //char string2[BUFFER_SIZE]; // second string - concatenate to the end of first string
+    //char string1[BUFFER_SIZE]; // first string to store user first input
+    //char string2[BUFFER_SIZE]; // second string to store user second input - concatenate to the end of first string
     //
-    //// Start a loop at least once and will continue until the user enter q to quit
+    //// Keep prompt for 2 string input until the user enter q to quit
     //do {
     //    // Prompt the user for the first string
     //    printf("Type the 1st string (q - to quit):\n");
@@ -65,11 +65,11 @@ void manipulating(void) {
     printf("**** Start of Comparing Strings Demo ****\n");
 
     // Declare 2 Cstring to store the string for comparison
-    char compare1[BUFFER_SIZE]; // first string
-    char compare2[BUFFER_SIZE]; // second string
+    char compare1[BUFFER_SIZE]; // first string to store user first input
+    char compare2[BUFFER_SIZE]; // second string to store user second input
     int result; // Store the comparison result
 
-    // Start a loop at least once and will continue until the user enter q to quit
+    // Keep prompt for 2 string input until the user enter q to quit
     do {
         // Prompt the user for the first string
         printf("Type the 1st string to compare (q - to quit):\n");
@@ -91,15 +91,15 @@ void manipulating(void) {
         result = strcmp(compare1, compare2);
 
         // Check the value of reuslt and display corresponding message to user
-        // compare1 < compare2
+        // compare1 < compare2 and output proper message to user
         if (result < 0) {
             printf("\"%s\" string is less than \"%s\"\n", compare1, compare2);
         }
-        // compare1 = compare2
+        // compare1 = compare2 and output proper message to user
         else if (result == 0) {
             printf("\"%s\" string is equal to \"%s\"\n", compare1, compare2);
         }
-        // compare1 > compare2 
+        // compare1 > compare2 and output proper message to user
         else {
             printf("\"%s\" string is greater than \"%s\"\n", compare1, compare2);
         }
