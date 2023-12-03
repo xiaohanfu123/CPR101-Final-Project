@@ -1,90 +1,90 @@
 Manipulating Testing 
 
-------Version 1-------
-Test 1: (Normal case)
+-------------- Version 1: String Concatenate -------------------------------
+>> Test 1: (Normal case)
 Type the 1st string (q - to quit):
 John
 Type the 2nd string:
  Simith
 Concatenated string is 'John Simith'
 
-Test 2: (Empty string)
+>> Test 2: (Empty string)
 Type the 1st string (q - to quit):
 
 Type the 2nd string:
 
 Concatenated string is ''
 
-Test 3: (Edge case)
+>> Test 3: (Edge case)
 Type the 1st string (q - to quit):
 Hi John Smith
 Type the 2nd string:
  Nice to meet you!
 Concatenated string is 'Hi John Smith Nice to meet you!'
 
-Test 4: (Over-the-edge: string1 over the limit)
+>> Test 4: (Over-the-edge: string1 over the limit)
 Type the 1st string (q - to quit):
 Hello this is John Smith, Nice to meet you!
 Type the 2nd string:
 Concatenated string is 'Hello this is John Smith, Niceto meet you!'
 
-Test 5: (Over-the-edge: string2 over the limit)
+>> Test 5: (Over-the-edge: string2 over the limit)
 Type the 1st string (q - to quit):
 12345
 Type the 2nd string:
 Hi John Smith Nice to meet you!
 Concatenated string is '12345Hi John Smith Nice to meet you'
 
-Test 6: (Over-the-edge: after concatenation string1 over the limit)
+>> Test 6: (Over-the-edge: after concatenation string1 over the limit)
 Type the 1st string (q - to quit):
 Hello this is John Smith,
 Type the 2nd string:
  Nice to meet you!
 Concatenated string is 'Hello this is John Smith, Nice to meet you!'
 
-------Version 2-------
-Test 1: (Identical)
+--------------- Version 2: String Comparision -------------------------------
+>> Test 1: (Identical)
 Type the 1st string to compare (q - to quit):
 test
 Type the 2nd string to compare:
 test
 "test" string is equal to "test"
 
-Test 2: (Case sensitive)
+>> Test 2: (Case sensitive)
 Type the 1st string to compare (q - to quit):
 Test
 Type the 2nd string to compare:
 test
 "Test" string is less than "test"
 
-Test 3: (Different length)
+>> Test 3: (Different length)
 Type the 1st string to compare (q - to quit):
 Hello World
 Type the 2nd string to compare:
 Hello
 "Hello World" string is greater than "Hello"
 
-Test 4: (Empty string)
+>> Test 4: (Empty string)
 Type the 1st string to compare (q - to quit):
 
 Type the 2nd string to compare:
 
 "" string is equal to ""
 
-Test 5: (Special characters)
+>> Test 5: (Special characters)
 Type the 1st string to compare (q - to quit):
 @123
 Type the 2nd string to compare:
 $456
 "@123" string is greater than "$456"
 
-Test 6: (Over-the-edge: compare1 over the limit)
+>> Test 6: (Over-the-edge: compare1 over the limit)
 Type the 1st string to compare (q - to quit):
 Hello this is John Smith, Nice to meet you!
 Type the 2nd string to compare:
 "Hello this is John Smith, Nice" string is less than "to meet you!"
 
-Test 7: (Over-the-edge: compare2 over the limit)
+>> Test 7: (Over-the-edge: compare2 over the limit)
 Type the 1st string to compare (q - to quit):
 Hello this is John Smith, Nice
 Type the 2nd string to compare:
@@ -92,3 +92,84 @@ Hello this is John Smith, Nice to meet you!
 "Hello this is John Smith, Nice" string is equal to "Hello this is John Smith, Nice"
 Type the 1st string to compare (q - to quit):
 Type the 2nd string to compare:
+
+--------------- Version 3: String Search -------------------------------
+>> Test 1: (Normal case)
+Type the string (q - to quit):
+Hello World!
+Type the substring:
+World
+"World" found at 6 position
+
+>> Test 2: (needle at beginning)
+Type the string (q - to quit):
+Test starts now right?
+Type the substring:
+Test
+"Test" found at 0 position
+
+>> Test 3: (needle at end)
+Type the string (q - to quit):
+This is a test
+Type the substring:
+test
+"test" found at 10 position
+
+>> Test 4: (needle is single character)
+Type the string (q - to quit):
+Hello World!
+Type the substring:
+o
+"o" found at 4 position
+
+>> Test 5: (needle not found)
+Type the string (q - to quit):
+Hello World!
+Type the substring:
+Happy
+Not found
+
+>> Test 6: (haystack is empty)
+Type the string (q - to quit):
+
+Type the substring:
+test
+Not found
+
+>> Test 7: (needle is empty)
+Type the string (q - to quit):
+test
+Type the substring:
+
+"" found at 0 position
+
+>> Test 8: (Both string is empty)
+Type the string (q - to quit):
+
+Type the substring:
+
+"" found at 0 position
+
+>> Test 9: (Over-the-edge: haystack over the limit)
+Type the string (q - to quit):
+one two three four five six seven eight nine ten
+Type the substring:
+Not found
+
+>> Test 10: (Over-the-edge: haystack over the limit with repeated pattern)
+Type the string (q - to quit):
+two three four two three four two three four two three four
+Type the substring:
+"wo three four two three four" found at 1 position
+
+>>Test 11: (Over-the-edge: needle over the limit)
+Type the string (q - to quit):
+four
+Type the substring:
+one two three four five six seven eight nine ten
+Not found
+Type the string (q - to quit):
+Type the substring:
+
+
+
