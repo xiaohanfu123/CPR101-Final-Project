@@ -58,7 +58,7 @@ void manipulating(void) {
     //printf("**** End of Concatenating Strings Demo ****\n");
 
 
-/* Version 2 */
+/* Version 2 
     //------------- Demo of String Comparing ---------------
 
     // Display the staring message for user to understand the purpose of this demo
@@ -105,31 +105,49 @@ void manipulating(void) {
         }
     } while (strcmp(compare1, "q") != 0); // Continue looping until the user enter 'q' for the compare1
     printf("**** End of Comparing Strings Demo ****\n");
+    */
     
 
 /* Version 3 */
+    //------------- Demo of String Search ---------------
+
+    // Display the staring message for user to understand the purpose of this demo
     printf("**** Start of Searching Strings Demo ****\n");
-    char haystack[BUFFER_SIZE];
-    char needle[BUFFER_SIZE];
-    char* occurrence = NULL;
+    char haystack[BUFFER_SIZE]; // string to store user input as a searching library
+    char needle[BUFFER_SIZE];  // string to store user input as a searching keyword
+    char* occurrence = NULL; // variable to store search result, NULL = not found
+    
+    // Keep prompt for 2 string input until the user enter q to quit
     do {
+        // Prompt the user for the library string
         printf("Type the string (q - to quit):\n");
-        fgets(haystack, BUFFER_SIZE, stdin);
+        fgets(haystack, BUFFER_SIZE, stdin); // Read the first input Cstring from user and stores in haystack
+        // Remove the newline character at the end of the input string
         haystack[strlen(haystack) - 1] = '\0';
+        
+        // Check whether the user wants to exit current demo. If user input 'q', then exit the demo
         if (strcmp(haystack, "q") == 0) {
             break;
         }
+        
+        // Prompt the user for the keyword string/substring
         printf("Type the substring:\n");
-        fgets(needle, BUFFER_SIZE, stdin);
+        fgets(needle, BUFFER_SIZE, stdin); // Read the second input Cstring from user and stores in needle
+        // Remove the newline character at the end of the input string
         needle[strlen(needle) - 1] = '\0';
+
+        //Search the occurrence of needle in haystack and store the result in variable occurance
         occurrence = strstr(haystack, needle);
+
+        // Check the value of occurence and display corresponding message to user
+        // Found the needle in haystack and give the exact position of needle in haystack
         if (occurrence) {
             printf("\"%s\" found at %d position\n", needle, (int)(occurrence - haystack));
         }
         else {
             printf("Not found\n");
         }
-    } while (strcmp(haystack, "q") != 0);
+    } while (strcmp(haystack, "q") != 0);// Continue looping until the user enter 'q' for the haystack
     printf("**** End of Searching Strings Demo ****\n");
     
 }
