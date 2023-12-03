@@ -107,7 +107,7 @@ void manipulating(void) {
     printf("**** End of Comparing Strings Demo ****\n");
     
 
-/* Version 3 
+/* Version 3 */
     printf("**** Start of Searching Strings Demo ****\n");
     char haystack[BUFFER_SIZE];
     char needle[BUFFER_SIZE];
@@ -131,5 +131,5 @@ void manipulating(void) {
         }
     } while (strcmp(haystack, "q") != 0);
     printf("**** End of Searching Strings Demo ****\n");
-    */
+    
 }
