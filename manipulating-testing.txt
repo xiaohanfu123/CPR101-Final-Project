@@ -64,27 +64,34 @@ Type the 2nd string to compare:
 Hello
 "Hello World" string is greater than "Hello"
 
->> Test 4: (Empty string)
+>> Test 4: (Compare one empty string)
+Type the 1st string to compare (q - to quit):
+
+Type the 2nd string to compare:
+test
+"" string is less than "test"
+
+>> Test 5: (Both string are empty )
 Type the 1st string to compare (q - to quit):
 
 Type the 2nd string to compare:
 
 "" string is equal to ""
 
->> Test 5: (Special characters)
+>> Test 6: (Special characters)
 Type the 1st string to compare (q - to quit):
 @123
 Type the 2nd string to compare:
 $456
 "@123" string is greater than "$456"
 
->> Test 6: (Over-the-edge: compare1 over the limit)
+>> Test 7: (Over-the-edge: compare1 over the limit)
 Type the 1st string to compare (q - to quit):
 Hello this is John Smith, Nice to meet you!
 Type the 2nd string to compare:
 "Hello this is John Smith, Nice" string is less than "to meet you!"
 
->> Test 7: (Over-the-edge: compare2 over the limit)
+>> Test 8: (Over-the-edge: compare2 over the limit)
 Type the 1st string to compare (q - to quit):
 Hello this is John Smith, Nice
 Type the 2nd string to compare:
