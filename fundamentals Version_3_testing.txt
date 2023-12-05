@@ -1,0 +1,31 @@
+//Version_3
+*** Start of Copying Strings Demo ***
+Destination string is reset to empty
+Type the source string (q - to quit):
+schvgyr 
+New destination string is 'schvgyr '
+Destination string is reset to empty
+Type the source string (q - to quit):
+234533
+New destination string is '234533'
+Destination string is reset to empty
+Type the source string (q - to quit):
+#@$%!$%&^!
+New destination string is '#@$%!$%&^!'
+Destination string is reset to empty
+Type the source string (q - to quit):
+agfyiwdgscv djcvhdgygsdhc sjcusgvuaubjsnb jvsjcg yusgyuebd sgsvufcgysvc sd sugcyuwdvc dscysf csd cwgsdj sgyuegch sg ys gcysdv sucueycvsc vsuy rychvdsuyhcvsyuhdgfbyshcv dsychv wryhgvw ycuhgdsbc yuhwjgvuycgb xzhjcv ryhdgvbcyrhdgvc yushgaefbwyhcgvw
+New destination string is 'agfyiwdgscv djcvhdgygsdhc sjcusgvuaubjsnb jvsjcg yusgyuebd sgsvufcgysvc sd sugcyuwdvc dscysf csd c'
+Destination string is reset to empty
+Type the source string (q - to quit):
+New destination string is 'gvuycgb xzhjcv ryhdgvbcyrhdgvc yushgaefbwyhcgvw'
+Destination string is reset to empty
+Type the source string (q - to quit):
+q
+Destination string is reset to empty
+Type the source string (q - to quit):
+
+New destination string is ''
+Destination string is reset to empty
+Type the source string (q - to quit):
+*** End of Copying Strings Demo ***
