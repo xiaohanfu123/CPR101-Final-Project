@@ -20,3 +20,19 @@ Converted number is 2147483647
 Type an int numeric string (q - to quit):
 1234 4321
 Converted number is 1234
+
+*** Start of Converting Strings to double Demo ***
+Type the double numeric string (q - to quit):
+12.34
+Converted number is 12.340000
+Type the double numeric string (q - to quit):
+.123456
+Converted number is 0.123456
+Type the double numeric string (q - to quit):
+.123 456
+Converted number is 0.123000
+Type the double numeric string (q - to quit):
+0.12345674987987498165
+Converted number is 0.123457
+Type the double numeric string (q - to quit):
+1
