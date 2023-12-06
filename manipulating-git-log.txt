@@ -1,3 +1,1044 @@
+commit cecfd8b0942d30a1248e56d1d1968e2866004398
+Author: Jarvinia Zhao <jzhao169@myseneca.ca>
+Date:   Wed Dec 6 13:45:46 2023 -0500
+
+    Version3: Minor format modifications
+
+diff --git a/manipulating-test-cases.xlsx b/manipulating-test-cases.xlsx
+index 5449f31..2fa13a7 100644
+Binary files a/manipulating-test-cases.xlsx and b/manipulating-test-cases.xlsx differ
+diff --git a/manipulating-testing.txt b/manipulating-testing.txt
+index f73a2bc..80e1c9d 100644
+--- a/manipulating-testing.txt
++++ b/manipulating-testing.txt
+@@ -1,4 +1,4 @@
+-Manipulating Testing 
++Manipulating Testing Records
+ 
+ -------------- Version 1: String Concatenate -------------------------------
+ >> Test 1: (Normal case)
+
+commit 5ca8d5a33a8d2db071a1748e1c439a083789c4c7
+Author: Jarvinia Zhao <jzhao169@myseneca.ca>
+Date:   Sat Dec 2 21:30:36 2023 -0500
+
+    Version 2: Add one more testing case - one empty string
+
+diff --git a/manipulating-test-cases.xlsx b/manipulating-test-cases.xlsx
+index 4990758..5449f31 100644
+Binary files a/manipulating-test-cases.xlsx and b/manipulating-test-cases.xlsx differ
+diff --git a/manipulating-testing.txt b/manipulating-testing.txt
+index 57c3364..f73a2bc 100644
+--- a/manipulating-testing.txt
++++ b/manipulating-testing.txt
+@@ -64,27 +64,34 @@ Type the 2nd string to compare:
+ Hello
+ "Hello World" string is greater than "Hello"
+ 
+->> Test 4: (Empty string)
++>> Test 4: (Compare one empty string)
++Type the 1st string to compare (q - to quit):
++
++Type the 2nd string to compare:
++test
++"" string is less than "test"
++
++>> Test 5: (Both string are empty )
+ Type the 1st string to compare (q - to quit):
+ 
+ Type the 2nd string to compare:
+ 
+ "" string is equal to ""
+ 
+->> Test 5: (Special characters)
++>> Test 6: (Special characters)
+ Type the 1st string to compare (q - to quit):
+ @123
+ Type the 2nd string to compare:
+ $456
+ "@123" string is greater than "$456"
+ 
+->> Test 6: (Over-the-edge: compare1 over the limit)
++>> Test 7: (Over-the-edge: compare1 over the limit)
+ Type the 1st string to compare (q - to quit):
+ Hello this is John Smith, Nice to meet you!
+ Type the 2nd string to compare:
+ "Hello this is John Smith, Nice" string is less than "to meet you!"
+ 
+->> Test 7: (Over-the-edge: compare2 over the limit)
++>> Test 8: (Over-the-edge: compare2 over the limit)
+ Type the 1st string to compare (q - to quit):
+ Hello this is John Smith, Nice
+ Type the 2nd string to compare:
+
+commit 4b8535e987cecb5e0dc6519e9aa7a5d8b2e87950
+Author: Jarvinia Zhao <jzhao169@myseneca.ca>
+Date:   Sat Dec 2 21:23:39 2023 -0500
+
+    Version 3: Upload testing case records, and modify the format of testing.txt
+
+diff --git a/manipulating-test-cases.xlsx b/manipulating-test-cases.xlsx
+index 8058037..4990758 100644
+Binary files a/manipulating-test-cases.xlsx and b/manipulating-test-cases.xlsx differ
+diff --git a/manipulating-testing.txt b/manipulating-testing.txt
+index 1d00335..57c3364 100644
+--- a/manipulating-testing.txt
++++ b/manipulating-testing.txt
+@@ -1,94 +1,175 @@
+ Manipulating Testing 
+ 
+-------Version 1-------
+-Test 1: (Normal case)
++-------------- Version 1: String Concatenate -------------------------------
++>> Test 1: (Normal case)
+ Type the 1st string (q - to quit):
+ John
+ Type the 2nd string:
+  Simith
+ Concatenated string is 'John Simith'
+ 
+-Test 2: (Empty string)
++>> Test 2: (Empty string)
+ Type the 1st string (q - to quit):
+ 
+ Type the 2nd string:
+ 
+ Concatenated string is ''
+ 
+-Test 3: (Edge case)
++>> Test 3: (Edge case)
+ Type the 1st string (q - to quit):
+ Hi John Smith
+ Type the 2nd string:
+  Nice to meet you!
+ Concatenated string is 'Hi John Smith Nice to meet you!'
+ 
+-Test 4: (Over-the-edge: string1 over the limit)
++>> Test 4: (Over-the-edge: string1 over the limit)
+ Type the 1st string (q - to quit):
+ Hello this is John Smith, Nice to meet you!
+ Type the 2nd string:
+ Concatenated string is 'Hello this is John Smith, Niceto meet you!'
+ 
+-Test 5: (Over-the-edge: string2 over the limit)
++>> Test 5: (Over-the-edge: string2 over the limit)
+ Type the 1st string (q - to quit):
+ 12345
+ Type the 2nd string:
+ Hi John Smith Nice to meet you!
+ Concatenated string is '12345Hi John Smith Nice to meet you'
+ 
+-Test 6: (Over-the-edge: after concatenation string1 over the limit)
++>> Test 6: (Over-the-edge: after concatenation string1 over the limit)
+ Type the 1st string (q - to quit):
+ Hello this is John Smith,
+ Type the 2nd string:
+  Nice to meet you!
+ Concatenated string is 'Hello this is John Smith, Nice to meet you!'
+ 
+-------Version 2-------
+-Test 1: (Identical)
++--------------- Version 2: String Comparision -------------------------------
++>> Test 1: (Identical)
+ Type the 1st string to compare (q - to quit):
+ test
+ Type the 2nd string to compare:
+ test
+ "test" string is equal to "test"
+ 
+-Test 2: (Case sensitive)
++>> Test 2: (Case sensitive)
+ Type the 1st string to compare (q - to quit):
+ Test
+ Type the 2nd string to compare:
+ test
+ "Test" string is less than "test"
+ 
+-Test 3: (Different length)
++>> Test 3: (Different length)
+ Type the 1st string to compare (q - to quit):
+ Hello World
+ Type the 2nd string to compare:
+ Hello
+ "Hello World" string is greater than "Hello"
+ 
+-Test 4: (Empty string)
++>> Test 4: (Empty string)
+ Type the 1st string to compare (q - to quit):
+ 
+ Type the 2nd string to compare:
+ 
+ "" string is equal to ""
+ 
+-Test 5: (Special characters)
++>> Test 5: (Special characters)
+ Type the 1st string to compare (q - to quit):
+ @123
+ Type the 2nd string to compare:
+ $456
+ "@123" string is greater than "$456"
+ 
+-Test 6: (Over-the-edge: compare1 over the limit)
++>> Test 6: (Over-the-edge: compare1 over the limit)
+ Type the 1st string to compare (q - to quit):
+ Hello this is John Smith, Nice to meet you!
+ Type the 2nd string to compare:
+ "Hello this is John Smith, Nice" string is less than "to meet you!"
+ 
+-Test 7: (Over-the-edge: compare2 over the limit)
++>> Test 7: (Over-the-edge: compare2 over the limit)
+ Type the 1st string to compare (q - to quit):
+ Hello this is John Smith, Nice
+ Type the 2nd string to compare:
+ Hello this is John Smith, Nice to meet you!
+ "Hello this is John Smith, Nice" string is equal to "Hello this is John Smith, Nice"
+ Type the 1st string to compare (q - to quit):
+-Type the 2nd string to compare:
+\ No newline at end of file
++Type the 2nd string to compare:
++
++--------------- Version 3: String Search -------------------------------
++>> Test 1: (Normal case)
++Type the string (q - to quit):
++Hello World!
++Type the substring:
++World
++"World" found at 6 position
++
++>> Test 2: (needle at beginning)
++Type the string (q - to quit):
++Test starts now right?
++Type the substring:
++Test
++"Test" found at 0 position
++
++>> Test 3: (needle at end)
++Type the string (q - to quit):
++This is a test
++Type the substring:
++test
++"test" found at 10 position
++
++>> Test 4: (needle is single character)
++Type the string (q - to quit):
++Hello World!
++Type the substring:
++o
++"o" found at 4 position
++
++>> Test 5: (needle not found)
++Type the string (q - to quit):
++Hello World!
++Type the substring:
++Happy
++Not found
++
++>> Test 6: (haystack is empty)
++Type the string (q - to quit):
++
++Type the substring:
++test
++Not found
++
++>> Test 7: (needle is empty)
++Type the string (q - to quit):
++test
++Type the substring:
++
++"" found at 0 position
++
++>> Test 8: (Both string is empty)
++Type the string (q - to quit):
++
++Type the substring:
++
++"" found at 0 position
++
++>> Test 9: (Over-the-edge: haystack over the limit)
++Type the string (q - to quit):
++one two three four five six seven eight nine ten
++Type the substring:
++Not found
++
++>> Test 10: (Over-the-edge: haystack over the limit with repeated pattern)
++Type the string (q - to quit):
++two three four two three four two three four two three four
++Type the substring:
++"wo three four two three four" found at 1 position
++
++>>Test 11: (Over-the-edge: needle over the limit)
++Type the string (q - to quit):
++four
++Type the substring:
++one two three four five six seven eight nine ten
++Not found
++Type the string (q - to quit):
++Type the substring:
++
++
++
+
+commit b70dcc9b0533d13e72fe7be9759f3bdeebd7747d
+Author: Jarvinia Zhao <jzhao169@myseneca.ca>
+Date:   Sat Dec 2 21:21:59 2023 -0500
+
+    Version 3: Finish code comments
+
+diff --git a/manipulating.c b/manipulating.c
+index c1f52ee..095ec35 100644
+--- a/manipulating.c
++++ b/manipulating.c
+@@ -58,7 +58,7 @@ void manipulating(void) {
+     //printf("**** End of Concatenating Strings Demo ****\n");
+ 
+ 
+-/* Version 2 */
++/* Version 2 
+     //------------- Demo of String Comparing ---------------
+ 
+     // Display the staring message for user to understand the purpose of this demo
+@@ -105,31 +105,49 @@ void manipulating(void) {
+         }
+     } while (strcmp(compare1, "q") != 0); // Continue looping until the user enter 'q' for the compare1
+     printf("**** End of Comparing Strings Demo ****\n");
++    */
+     
+ 
+ /* Version 3 */
++    //------------- Demo of String Search ---------------
++
++    // Display the staring message for user to understand the purpose of this demo
+     printf("**** Start of Searching Strings Demo ****\n");
+-    char haystack[BUFFER_SIZE];
+-    char needle[BUFFER_SIZE];
+-    char* occurrence = NULL;
++    char haystack[BUFFER_SIZE]; // string to store user input as a searching library
++    char needle[BUFFER_SIZE];  // string to store user input as a searching keyword
++    char* occurrence = NULL; // variable to store search result, NULL = not found
++    
++    // Keep prompt for 2 string input until the user enter q to quit
+     do {
++        // Prompt the user for the library string
+         printf("Type the string (q - to quit):\n");
+-        fgets(haystack, BUFFER_SIZE, stdin);
++        fgets(haystack, BUFFER_SIZE, stdin); // Read the first input Cstring from user and stores in haystack
++        // Remove the newline character at the end of the input string
+         haystack[strlen(haystack) - 1] = '\0';
++        
++        // Check whether the user wants to exit current demo. If user input 'q', then exit the demo
+         if (strcmp(haystack, "q") == 0) {
+             break;
+         }
++        
++        // Prompt the user for the keyword string/substring
+         printf("Type the substring:\n");
+-        fgets(needle, BUFFER_SIZE, stdin);
++        fgets(needle, BUFFER_SIZE, stdin); // Read the second input Cstring from user and stores in needle
++        // Remove the newline character at the end of the input string
+         needle[strlen(needle) - 1] = '\0';
++
++        //Search the occurrence of needle in haystack and store the result in variable occurance
+         occurrence = strstr(haystack, needle);
++
++        // Check the value of occurence and display corresponding message to user
++        // Found the needle in haystack and give the exact position of needle in haystack
+         if (occurrence) {
+             printf("\"%s\" found at %d position\n", needle, (int)(occurrence - haystack));
+         }
+         else {
+             printf("Not found\n");
+         }
+-    } while (strcmp(haystack, "q") != 0);
++    } while (strcmp(haystack, "q") != 0);// Continue looping until the user enter 'q' for the haystack
+     printf("**** End of Searching Strings Demo ****\n");
+     
+ }
+\ No newline at end of file
+
+commit be760f11843fc5c19823ee5807bad95400b2702f
+Author: Jarvinia Zhao <jzhao169@myseneca.ca>
+Date:   Sat Dec 2 19:29:27 2023 -0500
+
+    Version 3: Code without any comments
+
+diff --git a/manipulating.c b/manipulating.c
+index 0e763bf..c1f52ee 100644
+--- a/manipulating.c
++++ b/manipulating.c
+@@ -107,7 +107,7 @@ void manipulating(void) {
+     printf("**** End of Comparing Strings Demo ****\n");
+     
+ 
+-/* Version 3 
++/* Version 3 */
+     printf("**** Start of Searching Strings Demo ****\n");
+     char haystack[BUFFER_SIZE];
+     char needle[BUFFER_SIZE];
+@@ -131,5 +131,5 @@ void manipulating(void) {
+         }
+     } while (strcmp(haystack, "q") != 0);
+     printf("**** End of Searching Strings Demo ****\n");
+-    */
++    
+ }
+\ No newline at end of file
+
+commit 60a339ffd2fcde2efa9b67ff5a315351107677a3
+Author: Jarvinia Zhao <jzhao169@myseneca.ca>
+Date:   Sat Dec 2 19:11:51 2023 -0500
+
+    Version 2: upload git log
+
+diff --git a/manipulating-git-log.txt b/manipulating-git-log.txt
+new file mode 100644
+index 0000000..7af623f
+--- /dev/null
++++ b/manipulating-git-log.txt
+@@ -0,0 +1,643 @@
++commit 65fd6432ce4b971660a56f7f960f06a714405a9b
++Author: Jarvinia Zhao <jzhao169@myseneca.ca>
++Date:   Sat Dec 2 19:02:49 2023 -0500
++
++    Version 1&2: Correct typos and revise the wording
++
++diff --git a/manipulating-test-cases.xlsx b/manipulating-test-cases.xlsx
++index 741f37a..8058037 100644
++Binary files a/manipulating-test-cases.xlsx and b/manipulating-test-cases.xlsx differ
++
++commit 4b5197c169be2a959933edfdd976b123ed44f42e
++Author: Jarvinia Zhao <jzhao169@myseneca.ca>
++Date:   Sat Dec 2 19:01:42 2023 -0500
++
++    Header file: Add and revise some comment for easy understanding
++
++diff --git a/manipulating.h b/manipulating.h
++index fdbd4a4..e3dcc7a 100644
++--- a/manipulating.h
+++++ b/manipulating.h
++@@ -3,10 +3,12 @@
++ #ifndef _MANIPULATING_H_
++ #define _MANIPULATING_H_
++ 
+++//All system library needed
++ #include <stdio.h>
++ #include <string.h>
++ 
++-#define BUFFER_SIZE 32 // Define a constant for maximum string length
+++// Define a constant for maximum length of input string 
+++#define BUFFER_SIZE 32
++ 
++ // manipulating prototype: Allow users to manipulate string input
++ //Including: string concatenate
++
++commit bccbd7b3a5fbf9465d1852b3dd642777bf3f29ce
++Merge: 5724194 723cf02
++Author: Jarvinia Zhao <jzhao169@myseneca.ca>
++Date:   Sat Dec 2 18:58:38 2023 -0500
++
++    Merge branch 'manipulating' of https://github.com/xiaohanfu123/CPR101-Final-Project into manipulating
++
++commit 5724194a681ef0c8997824b91fc692f6dc29686f
++Author: Jarvinia Zhao <jzhao169@myseneca.ca>
++Date:   Sat Dec 2 18:57:50 2023 -0500
++
++    Version 1&2: Revise some comments to make them easy to understand the codes
++
++diff --git a/manipulating.c b/manipulating.c
++index 31ce090..0e763bf 100644
++--- a/manipulating.c
+++++ b/manipulating.c
++@@ -9,9 +9,9 @@ Final Project
++ */
++ 
++ /* The costomized library "manipulating.h" header file provides :
++-    2 standard libraies: stdio.h and string.h
++-    Defined macro 'BUFFER_SIZE' setting the max string length for manipulation
++-    Prototype for function manipulating
+++    - 2 standard libraies: stdio.h and string.h
+++    - Defined macro 'BUFFER_SIZE' setting the max string length for manipulation
+++    - Prototype for function manipulating
++ */
++ #include "manipulating.h"   
++ 
++@@ -26,10 +26,10 @@ void manipulating(void) {
++     // Display the staring message for user to understand the purpose of this demo
++     //printf("**** Start of Concatenating Strings Demo ****\n");
++     //// Declare 2 Cstring to store the string for concatenation 
++-    //char string1[BUFFER_SIZE]; // first string 
++-    //char string2[BUFFER_SIZE]; // second string - concatenate to the end of first string
+++    //char string1[BUFFER_SIZE]; // first string to store user first input
+++    //char string2[BUFFER_SIZE]; // second string to store user second input - concatenate to the end of first string
++     //
++-    //// Start a loop at least once and will continue until the user enter q to quit
+++    //// Keep prompt for 2 string input until the user enter q to quit
++     //do {
++     //    // Prompt the user for the first string
++     //    printf("Type the 1st string (q - to quit):\n");
++@@ -65,11 +65,11 @@ void manipulating(void) {
++     printf("**** Start of Comparing Strings Demo ****\n");
++ 
++     // Declare 2 Cstring to store the string for comparison
++-    char compare1[BUFFER_SIZE]; // first string
++-    char compare2[BUFFER_SIZE]; // second string
+++    char compare1[BUFFER_SIZE]; // first string to store user first input
+++    char compare2[BUFFER_SIZE]; // second string to store user second input
++     int result; // Store the comparison result
++ 
++-    // Start a loop at least once and will continue until the user enter q to quit
+++    // Keep prompt for 2 string input until the user enter q to quit
++     do {
++         // Prompt the user for the first string
++         printf("Type the 1st string to compare (q - to quit):\n");
++@@ -91,15 +91,15 @@ void manipulating(void) {
++         result = strcmp(compare1, compare2);
++ 
++         // Check the value of reuslt and display corresponding message to user
++-        // compare1 < compare2
+++        // compare1 < compare2 and output proper message to user
++         if (result < 0) {
++             printf("\"%s\" string is less than \"%s\"\n", compare1, compare2);
++         }
++-        // compare1 = compare2
+++        // compare1 = compare2 and output proper message to user
++         else if (result == 0) {
++             printf("\"%s\" string is equal to \"%s\"\n", compare1, compare2);
++         }
++-        // compare1 > compare2 
+++        // compare1 > compare2 and output proper message to user
++         else {
++             printf("\"%s\" string is greater than \"%s\"\n", compare1, compare2);
++         }
++
++commit 723cf0212615fd781700c1580261a1488b866e62
++Author: Jarviniazhao <151060098+Jarviniazhao@users.noreply.github.com>
++Date:   Fri Dec 1 09:30:48 2023 -0500
++
++    Add general descriptions of manipulating
++
++diff --git a/README.md b/README.md
++index 8a2ba66..e8b903a 100644
++--- a/README.md
+++++ b/README.md
++@@ -1 +1,4 @@
++-# CPR101-Final-Project
++\ No newline at end of file
+++# CPR101-Final-Project
+++
+++- Manipulating <br />
+++    This function provides the functionality to manipulate Cstings including 3 versions: string concatenation, comparison, and searching
++
++commit 259290768c7d6f4affc068cf206f83183da7ecb6
++Author: Jarvinia Zhao <jzhao169@myseneca.ca>
++Date:   Fri Dec 1 08:33:26 2023 -0500
++
++    Version 2: Comment out version1 code for testing version2 only
++
++diff --git a/manipulating.c b/manipulating.c
++index e57d2ae..31ce090 100644
++--- a/manipulating.c
+++++ b/manipulating.c
++@@ -19,42 +19,43 @@ Final Project
++ Function Purpose: This function provides the functionality to manipulate Cstings
++ */
++ void manipulating(void) {
+++
++ /* Version 1 */
++     //------------- Demo of String Concatenate ---------------
++     
++     // Display the staring message for user to understand the purpose of this demo
++-    printf("**** Start of Concatenating Strings Demo ****\n");
++-    // Declare 2 Cstring to store the string for concatenation 
++-    char string1[BUFFER_SIZE]; // first string 
++-    char string2[BUFFER_SIZE]; // second string - concatenate to the end of first string
++-    
++-    // Start a loop at least once and will continue until the user enter q to quit
++-    do {
++-        // Prompt the user for the first string
++-        printf("Type the 1st string (q - to quit):\n");
++-        fgets(string1, BUFFER_SIZE, stdin); // Read the first input string from user and stores in string1
++-        // Remove the newline character at the end of the input string
++-        string1[strlen(string1) - 1] = '\0';
++-
++-        // Check whether the user wants to exit current demo. If user input 'q', then exit the demo
++-        if (strcmp(string1, "q") == 0) {
++-            break;
++-        }
++-
++-        // Prompt the user for the second string
++-        printf("Type the 2nd string:\n");
++-        fgets(string2, BUFFER_SIZE, stdin); // Read the second input string from user and stores in string2
++-        // Remove the newline character at the end of the input string
++-        string2[strlen(string2) - 1] = '\0'; 
++-
++-        // Concatenate the string2 to the string1
++-        strcat(string1, string2);
++-        // Display the result after concatenation
++-        printf("Concatenated string is '%s'\n", string1);
++-
++-    } while (strcmp(string1, "q") != 0); // Continue looping until the user enter 'q' for the string1
++-
++-    printf("**** End of Concatenating Strings Demo ****\n");
+++    //printf("**** Start of Concatenating Strings Demo ****\n");
+++    //// Declare 2 Cstring to store the string for concatenation 
+++    //char string1[BUFFER_SIZE]; // first string 
+++    //char string2[BUFFER_SIZE]; // second string - concatenate to the end of first string
+++    //
+++    //// Start a loop at least once and will continue until the user enter q to quit
+++    //do {
+++    //    // Prompt the user for the first string
+++    //    printf("Type the 1st string (q - to quit):\n");
+++    //    fgets(string1, BUFFER_SIZE, stdin); // Read the first input string from user and stores in string1
+++    //    // Remove the newline character at the end of the input string
+++    //    string1[strlen(string1) - 1] = '\0';
+++
+++    //    // Check whether the user wants to exit current demo. If user input 'q', then exit the demo
+++    //    if (strcmp(string1, "q") == 0) {
+++    //        break;
+++    //    }
+++
+++    //    // Prompt the user for the second string
+++    //    printf("Type the 2nd string:\n");
+++    //    fgets(string2, BUFFER_SIZE, stdin); // Read the second input string from user and stores in string2
+++    //    // Remove the newline character at the end of the input string
+++    //    string2[strlen(string2) - 1] = '\0'; 
+++
+++    //    // Concatenate the string2 to the string1
+++    //    strcat(string1, string2);
+++    //    // Display the result after concatenation
+++    //    printf("Concatenated string is '%s'\n", string1);
+++
+++    //} while (strcmp(string1, "q") != 0); // Continue looping until the user enter 'q' for the string1
+++
+++    //printf("**** End of Concatenating Strings Demo ****\n");
++ 
++ 
++ /* Version 2 */
++
++commit 99c9ceef9a88f431213291029a49e438562858bd
++Author: Jarvinia Zhao <jzhao169@myseneca.ca>
++Date:   Thu Nov 30 23:45:15 2023 -0500
++
++    Version 2: Finish testing with 7 cases with actual output and case report
++
++diff --git a/manipulating-test-cases.xlsx b/manipulating-test-cases.xlsx
++index 2a6351e..741f37a 100644
++Binary files a/manipulating-test-cases.xlsx and b/manipulating-test-cases.xlsx differ
++diff --git a/manipulating-testing.txt b/manipulating-testing.txt
++index 3cf3d34..1d00335 100644
++--- a/manipulating-testing.txt
+++++ b/manipulating-testing.txt
++@@ -42,3 +42,53 @@ Type the 2nd string:
++  Nice to meet you!
++ Concatenated string is 'Hello this is John Smith, Nice to meet you!'
++ 
+++------Version 2-------
+++Test 1: (Identical)
+++Type the 1st string to compare (q - to quit):
+++test
+++Type the 2nd string to compare:
+++test
+++"test" string is equal to "test"
+++
+++Test 2: (Case sensitive)
+++Type the 1st string to compare (q - to quit):
+++Test
+++Type the 2nd string to compare:
+++test
+++"Test" string is less than "test"
+++
+++Test 3: (Different length)
+++Type the 1st string to compare (q - to quit):
+++Hello World
+++Type the 2nd string to compare:
+++Hello
+++"Hello World" string is greater than "Hello"
+++
+++Test 4: (Empty string)
+++Type the 1st string to compare (q - to quit):
+++
+++Type the 2nd string to compare:
+++
+++"" string is equal to ""
+++
+++Test 5: (Special characters)
+++Type the 1st string to compare (q - to quit):
+++@123
+++Type the 2nd string to compare:
+++$456
+++"@123" string is greater than "$456"
+++
+++Test 6: (Over-the-edge: compare1 over the limit)
+++Type the 1st string to compare (q - to quit):
+++Hello this is John Smith, Nice to meet you!
+++Type the 2nd string to compare:
+++"Hello this is John Smith, Nice" string is less than "to meet you!"
+++
+++Test 7: (Over-the-edge: compare2 over the limit)
+++Type the 1st string to compare (q - to quit):
+++Hello this is John Smith, Nice
+++Type the 2nd string to compare:
+++Hello this is John Smith, Nice to meet you!
+++"Hello this is John Smith, Nice" string is equal to "Hello this is John Smith, Nice"
+++Type the 1st string to compare (q - to quit):
+++Type the 2nd string to compare:
++\ No newline at end of file
++
++commit e1419a3e16637354960b9e5ad4878737841c65c4
++Author: Jarvinia Zhao <jzhao169@myseneca.ca>
++Date:   Tue Nov 28 21:02:47 2023 -0500
++
++    Version 2: Finish comments 1.0
++
++diff --git a/manipulating.c b/manipulating.c
++index caa2d08..e57d2ae 100644
++--- a/manipulating.c
+++++ b/manipulating.c
++@@ -32,7 +32,7 @@ void manipulating(void) {
++     do {
++         // Prompt the user for the first string
++         printf("Type the 1st string (q - to quit):\n");
++-        fgets(string1, BUFFER_SIZE, stdin); // Read the first input string from user
+++        fgets(string1, BUFFER_SIZE, stdin); // Read the first input string from user and stores in string1
++         // Remove the newline character at the end of the input string
++         string1[strlen(string1) - 1] = '\0';
++ 
++@@ -43,7 +43,7 @@ void manipulating(void) {
++ 
++         // Prompt the user for the second string
++         printf("Type the 2nd string:\n");
++-        fgets(string2, BUFFER_SIZE, stdin); // Read the second input string from user
+++        fgets(string2, BUFFER_SIZE, stdin); // Read the second input string from user and stores in string2
++         // Remove the newline character at the end of the input string
++         string2[strlen(string2) - 1] = '\0'; 
++ 
++@@ -58,31 +58,51 @@ void manipulating(void) {
++ 
++ 
++ /* Version 2 */
+++    //------------- Demo of String Comparing ---------------
+++
+++    // Display the staring message for user to understand the purpose of this demo
++     printf("**** Start of Comparing Strings Demo ****\n");
++-    char compare1[BUFFER_SIZE];
++-    char compare2[BUFFER_SIZE];
++-    int result;
+++
+++    // Declare 2 Cstring to store the string for comparison
+++    char compare1[BUFFER_SIZE]; // first string
+++    char compare2[BUFFER_SIZE]; // second string
+++    int result; // Store the comparison result
+++
+++    // Start a loop at least once and will continue until the user enter q to quit
++     do {
+++        // Prompt the user for the first string
++         printf("Type the 1st string to compare (q - to quit):\n");
++-        fgets(compare1, BUFFER_SIZE, stdin);
+++        fgets(compare1, BUFFER_SIZE, stdin); // Read the first input Cstring from user and stores in compare1
+++        // Remove the newline character at the end of the input string
++         compare1[strlen(compare1) - 1] = '\0';
+++
+++        // Check whether the user wants to exit current demo. If user input 'q', then exit the demo
++         if (strcmp(compare1, "q") == 0) {
++             break;
++         }
+++        // Prompt the user for the second string
++         printf("Type the 2nd string to compare:\n");
++-        fgets(compare2, BUFFER_SIZE, stdin);
+++        fgets(compare2, BUFFER_SIZE, stdin); // Read the second input Cstring from user and stores in compare2
+++        // Remove the newline character at the end of the input string
++         compare2[strlen(compare2) - 1] = '\0';
+++
+++        // Compare compare1 with compare2 and store the result to variable reuslt
++         result = strcmp(compare1, compare2);
+++
+++        // Check the value of reuslt and display corresponding message to user
+++        // compare1 < compare2
++         if (result < 0) {
++             printf("\"%s\" string is less than \"%s\"\n", compare1, compare2);
++         }
+++        // compare1 = compare2
++         else if (result == 0) {
++             printf("\"%s\" string is equal to \"%s\"\n", compare1, compare2);
++         }
+++        // compare1 > compare2 
++         else {
++             printf("\"%s\" string is greater than \"%s\"\n", compare1, compare2);
++         }
++-    } while (strcmp(compare1, "q") != 0);
+++    } while (strcmp(compare1, "q") != 0); // Continue looping until the user enter 'q' for the compare1
++     printf("**** End of Comparing Strings Demo ****\n");
++     
++ 
++
++commit 63486a4aa9da65f01fe5b158a7a62d3683e27e23
++Author: Jarvinia Zhao <jzhao169@myseneca.ca>
++Date:   Tue Nov 28 20:48:36 2023 -0500
++
++    Correct a comment for Version 1, which was put for wrong code
++
++diff --git a/manipulating.c b/manipulating.c
++index 58a46ce..caa2d08 100644
++--- a/manipulating.c
+++++ b/manipulating.c
++@@ -43,9 +43,9 @@ void manipulating(void) {
++ 
++         // Prompt the user for the second string
++         printf("Type the 2nd string:\n");
++-        fgets(string2, BUFFER_SIZE, stdin);
+++        fgets(string2, BUFFER_SIZE, stdin); // Read the second input string from user
++         // Remove the newline character at the end of the input string
++-        string2[strlen(string2) - 1] = '\0'; // Read the second input string from user
+++        string2[strlen(string2) - 1] = '\0'; 
++ 
++         // Concatenate the string2 to the string1
++         strcat(string1, string2);
++
++commit 13220bd1bfb31415bbed9664fd1e9fb3796c0525
++Author: Jarvinia Zhao <jzhao169@myseneca.ca>
++Date:   Tue Nov 28 20:27:55 2023 -0500
++
++    Adding completed work of version 1 for manipulating
++
++diff --git a/manipulating-test-cases.xlsx b/manipulating-test-cases.xlsx
++new file mode 100644
++index 0000000..2a6351e
++Binary files /dev/null and b/manipulating-test-cases.xlsx differ
++diff --git a/manipulating-testing.txt b/manipulating-testing.txt
++new file mode 100644
++index 0000000..3cf3d34
++--- /dev/null
+++++ b/manipulating-testing.txt
++@@ -0,0 +1,44 @@
+++Manipulating Testing 
+++
+++------Version 1-------
+++Test 1: (Normal case)
+++Type the 1st string (q - to quit):
+++John
+++Type the 2nd string:
+++ Simith
+++Concatenated string is 'John Simith'
+++
+++Test 2: (Empty string)
+++Type the 1st string (q - to quit):
+++
+++Type the 2nd string:
+++
+++Concatenated string is ''
+++
+++Test 3: (Edge case)
+++Type the 1st string (q - to quit):
+++Hi John Smith
+++Type the 2nd string:
+++ Nice to meet you!
+++Concatenated string is 'Hi John Smith Nice to meet you!'
+++
+++Test 4: (Over-the-edge: string1 over the limit)
+++Type the 1st string (q - to quit):
+++Hello this is John Smith, Nice to meet you!
+++Type the 2nd string:
+++Concatenated string is 'Hello this is John Smith, Niceto meet you!'
+++
+++Test 5: (Over-the-edge: string2 over the limit)
+++Type the 1st string (q - to quit):
+++12345
+++Type the 2nd string:
+++Hi John Smith Nice to meet you!
+++Concatenated string is '12345Hi John Smith Nice to meet you'
+++
+++Test 6: (Over-the-edge: after concatenation string1 over the limit)
+++Type the 1st string (q - to quit):
+++Hello this is John Smith,
+++Type the 2nd string:
+++ Nice to meet you!
+++Concatenated string is 'Hello this is John Smith, Nice to meet you!'
+++
++diff --git a/manipulating.c b/manipulating.c
++new file mode 100644
++index 0000000..58a46ce
++--- /dev/null
+++++ b/manipulating.c
++@@ -0,0 +1,114 @@
+++#define _CRT_SECURE_NO_WARNINGS
+++/*
+++Author: Jarvinia Zhao
+++Email: jzhao169@myseneca.ca
+++ID: 143013233
+++Date Written: 11-27-2023
+++Course: CPR101.NNN
+++Final Project
+++*/
+++
+++/* The costomized library "manipulating.h" header file provides :
+++    2 standard libraies: stdio.h and string.h
+++    Defined macro 'BUFFER_SIZE' setting the max string length for manipulation
+++    Prototype for function manipulating
+++*/
+++#include "manipulating.h"   
+++
+++/*
+++Function Purpose: This function provides the functionality to manipulate Cstings
+++*/
+++void manipulating(void) {
+++/* Version 1 */
+++    //------------- Demo of String Concatenate ---------------
+++    
+++    // Display the staring message for user to understand the purpose of this demo
+++    printf("**** Start of Concatenating Strings Demo ****\n");
+++    // Declare 2 Cstring to store the string for concatenation 
+++    char string1[BUFFER_SIZE]; // first string 
+++    char string2[BUFFER_SIZE]; // second string - concatenate to the end of first string
+++    
+++    // Start a loop at least once and will continue until the user enter q to quit
+++    do {
+++        // Prompt the user for the first string
+++        printf("Type the 1st string (q - to quit):\n");
+++        fgets(string1, BUFFER_SIZE, stdin); // Read the first input string from user
+++        // Remove the newline character at the end of the input string
+++        string1[strlen(string1) - 1] = '\0';
+++
+++        // Check whether the user wants to exit current demo. If user input 'q', then exit the demo
+++        if (strcmp(string1, "q") == 0) {
+++            break;
+++        }
+++
+++        // Prompt the user for the second string
+++        printf("Type the 2nd string:\n");
+++        fgets(string2, BUFFER_SIZE, stdin);
+++        // Remove the newline character at the end of the input string
+++        string2[strlen(string2) - 1] = '\0'; // Read the second input string from user
+++
+++        // Concatenate the string2 to the string1
+++        strcat(string1, string2);
+++        // Display the result after concatenation
+++        printf("Concatenated string is '%s'\n", string1);
+++
+++    } while (strcmp(string1, "q") != 0); // Continue looping until the user enter 'q' for the string1
+++
+++    printf("**** End of Concatenating Strings Demo ****\n");
+++
+++
+++/* Version 2 */
+++    printf("**** Start of Comparing Strings Demo ****\n");
+++    char compare1[BUFFER_SIZE];
+++    char compare2[BUFFER_SIZE];
+++    int result;
+++    do {
+++        printf("Type the 1st string to compare (q - to quit):\n");
+++        fgets(compare1, BUFFER_SIZE, stdin);
+++        compare1[strlen(compare1) - 1] = '\0';
+++        if (strcmp(compare1, "q") == 0) {
+++            break;
+++        }
+++        printf("Type the 2nd string to compare:\n");
+++        fgets(compare2, BUFFER_SIZE, stdin);
+++        compare2[strlen(compare2) - 1] = '\0';
+++        result = strcmp(compare1, compare2);
+++        if (result < 0) {
+++            printf("\"%s\" string is less than \"%s\"\n", compare1, compare2);
+++        }
+++        else if (result == 0) {
+++            printf("\"%s\" string is equal to \"%s\"\n", compare1, compare2);
+++        }
+++        else {
+++            printf("\"%s\" string is greater than \"%s\"\n", compare1, compare2);
+++        }
+++    } while (strcmp(compare1, "q") != 0);
+++    printf("**** End of Comparing Strings Demo ****\n");
+++    
+++
+++/* Version 3 
+++    printf("**** Start of Searching Strings Demo ****\n");
+++    char haystack[BUFFER_SIZE];
+++    char needle[BUFFER_SIZE];
+++    char* occurrence = NULL;
+++    do {
+++        printf("Type the string (q - to quit):\n");
+++        fgets(haystack, BUFFER_SIZE, stdin);
+++        haystack[strlen(haystack) - 1] = '\0';
+++        if (strcmp(haystack, "q") == 0) {
+++            break;
+++        }
+++        printf("Type the substring:\n");
+++        fgets(needle, BUFFER_SIZE, stdin);
+++        needle[strlen(needle) - 1] = '\0';
+++        occurrence = strstr(haystack, needle);
+++        if (occurrence) {
+++            printf("\"%s\" found at %d position\n", needle, (int)(occurrence - haystack));
+++        }
+++        else {
+++            printf("Not found\n");
+++        }
+++    } while (strcmp(haystack, "q") != 0);
+++    printf("**** End of Searching Strings Demo ****\n");
+++    */
+++}
++\ No newline at end of file
++diff --git a/manipulating.h b/manipulating.h
++new file mode 100644
++index 0000000..fdbd4a4
++--- /dev/null
+++++ b/manipulating.h
++@@ -0,0 +1,15 @@
+++#pragma once
+++// MANIPULATING MODULE HEADER
+++#ifndef _MANIPULATING_H_
+++#define _MANIPULATING_H_
+++
+++#include <stdio.h>
+++#include <string.h>
+++
+++#define BUFFER_SIZE 32 // Define a constant for maximum string length
+++
+++// manipulating prototype: Allow users to manipulate string input
+++//Including: string concatenate
+++void manipulating(void);
+++
+++#endif
++\ No newline at end of file
++
++commit 4382fcc46f84af21341f49a0a3d637836ef55795
++Author: xiaohanfu123 <110127564+xiaohanfu123@users.noreply.github.com>
++Date:   Wed Nov 15 22:09:25 2023 -0500
++
++    Initial commit
++
++diff --git a/LICENSE b/LICENSE
++new file mode 100644
++index 0000000..3db340b
++--- /dev/null
+++++ b/LICENSE
++@@ -0,0 +1,21 @@
+++MIT License
+++
+++Copyright (c) 2023 xiaohanfu123
+++
+++Permission is hereby granted, free of charge, to any person obtaining a copy
+++of this software and associated documentation files (the "Software"), to deal
+++in the Software without restriction, including without limitation the rights
+++to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+++copies of the Software, and to permit persons to whom the Software is
+++furnished to do so, subject to the following conditions:
+++
+++The above copyright notice and this permission notice shall be included in all
+++copies or substantial portions of the Software.
+++
+++THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+++IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+++FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+++AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+++LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+++OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+++SOFTWARE.
++diff --git a/README.md b/README.md
++new file mode 100644
++index 0000000..8a2ba66
++--- /dev/null
+++++ b/README.md
++@@ -0,0 +1 @@
+++# CPR101-Final-Project
++\ No newline at end of file
+
 commit 65fd6432ce4b971660a56f7f960f06a714405a9b
 Author: Jarvinia Zhao <jzhao169@myseneca.ca>
 Date:   Sat Dec 2 19:02:49 2023 -0500
