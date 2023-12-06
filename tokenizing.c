@@ -2,7 +2,7 @@
 Author: Wing Ho Chau
 Email: myseneca@myseneca.ca
 ID: 150924231
-Date Written: 11-27-2023
+Date Written: 12-1-2023
 Course: CPR101.NNN
 Final Project
 */
@@ -13,16 +13,16 @@ Final Project
 #include "tokenizing.h"  //includes header file to point libaraies
 
 void tokenizing() {
-/* Version 1 */
+	/* Version 1 */
 	printf("*** Start of Tokenizing Words Demo ***\n");
-	char words[BUFFER_SIZE];  //words will be used for user input and is the argument for 
-	char* nextWord = NULL;  //
-	int wordsCounter;  //wordsCounter will be used to count how many words are in the delimited input
-	
+	char words[BUFFER_SIZE];  //words will be used for user input
+	char* nextWord = NULL;  //nextWord is an array to store the return of tokenized strings.
+	int wordsCounter;  //wordsCounter will be used to count how many tokenized words are in the delimited input
+
 	do {
 		printf("Type a few words separated by space (q - to quit):\n");
 		fgets(words, BUFFER_SIZE, stdin);  //receives input from user and store in words[]
-		words[strlen(words) - 1] = '\0';  //Put a null terminator to the end the array
+		words[strlen(words) - 1] = '\0';  //Put a null terminator to the end of array
 		if (strcmp(words, "q") != 0) {  //Do the tokenizing if user doesn't input 'q'
 			nextWord = strtok(words, " ");  //use of tokenizing function to tokenize the word by delimiter 'whitespace'
 			wordsCounter = 1;  //Count the words, start with 1
