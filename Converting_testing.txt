@@ -1,0 +1,22 @@
+*** Start of Converting Strings to int Demo ***
+Type an int numeric string (q - to quit):
+1234
+Converted number is 1234
+Type an int numeric string (q - to quit):
+-123321
+Converted number is -123321
+Type an int numeric string (q - to quit):
+     456
+Converted number is 456
+Type an int numeric string (q - to quit):
+     789
+Converted number is 789
+Type an int numeric string (q - to quit):
+-555555555555
+Converted number is -2147483648
+Type an int numeric string (q - to quit):
+555555555555555
+Converted number is 2147483647
+Type an int numeric string (q - to quit):
+1234 4321
+Converted number is 1234
