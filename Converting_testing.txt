@@ -36,3 +36,13 @@ Type the double numeric string (q - to quit):
 Converted number is 0.123457
 Type the double numeric string (q - to quit):
 1
+
+*** Start of Converting Strings to long Demo ***
+Type the long numeric string (q - to quit):
+12345678987654321
+Converted number is 2147483647
+Type the long numeric string (q - to quit):
+123456789
+Converted number is 123456789
+Type the long numeric string (q - to quit):
+

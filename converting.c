@@ -56,50 +56,59 @@ Final Project
 
 /* Version 2 */
 //The function void converting(void) converts a string representation of an integer into its corresponding double value.
-void convertingToDouble(void) {
-    //	// Print a message to the screen to indicate the what this demo is doing.
-    printf("*** Start of Converting Strings to double Demo ***\n");
+//void converting(void) {
+//    //	// Print a message to the screen to indicate the what this demo is doing.
+//    printf("*** Start of Converting Strings to double Demo ***\n");
+//
+//    // Declare a buffer to hold the user input
+//    char doubleString[BUFFER_SIZE];
+//    double doubleNumber;
+//
+//    do {
+//        // Prompt the user to enter a double value in string format or 'q' to quit
+//        printf("Type the double numeric string (q - to quit):\n");
+//
+//        // Read the input from the user into the buffer
+//        fgets(doubleString, BUFFER_SIZE, stdin);
+//
+//        // Replace the newline character added by fgets with a null terminator to properly format the string
+//        doubleString[strlen(doubleString) - 1] = '\0';
+//
+//        // Check if the user wants to quit the loop; if not, proceed with conversion
+//        if ((strcmp(doubleString, "q") != 0)) {
+//            // Convert the string to a double using atof, which interprets the string as a floating-point number
+//            doubleNumber = atof(doubleString);
+//
+//            // Output the converted number
+//            printf("Converted number is %f\n", doubleNumber);
+//        }
+//    } while (strcmp(doubleString, "q") != 0); // Continue the loop until the user decides to quit by entering 'q'
+//
+//    // Print a message indicating the end of the program
+//    printf("*** End of Converting Strings to double Demo ***\n\n");
+//}
+/* Version 3 */
+void converting(void) {
+    // The function void converting(void) converts a string representation of an integer into its corresponding long value.
+    printf("*** Start of Converting Strings to long Demo ***\n");
 
-    // Declare a buffer to hold the user input
-    char doubleString[BUFFER_SIZE];
-    double doubleNumber;
+    char longString[BUFFER_SIZE]; // Buffer to store the input string representing a long integer
+    long longNumber; // Variable to hold the converted long integer value
 
     do {
-        // Prompt the user to enter a double value in string format or 'q' to quit
-        printf("Type the double numeric string (q - to quit):\n");
+        // Prompt the user to enter a string representation of a long integer or 'q' to quit
+        printf("Type the long numeric string (q - to quit):\n");
+        fgets(longString, BUFFER_SIZE, stdin); // Read the input string from standard input
 
-        // Read the input from the user into the buffer
-        fgets(doubleString, BUFFER_SIZE, stdin);
+        longString[strlen(longString) - 1] = '\0'; // Remove the newline character at the end of input
 
-        // Replace the newline character added by fgets with a null terminator to properly format the string
-        doubleString[strlen(doubleString) - 1] = '\0';
-
-        // Check if the user wants to quit the loop; if not, proceed with conversion
-        if ((strcmp(doubleString, "q") != 0)) {
-            // Convert the string to a double using atof, which interprets the string as a floating-point number
-            doubleNumber = atof(doubleString);
-
-            // Output the converted number
-            printf("Converted number is %f\n", doubleNumber);
+        // Check if the input is not the quit command 'q'
+        if ((strcmp(longString, "q") != 0)) {
+            longNumber = atol(longString); // Convert the input string to a long integer
+            printf("Converted number is %ld\n", longNumber); // Display the converted long integer
         }
-    } while (strcmp(doubleString, "q") != 0); // Continue the loop until the user decides to quit by entering 'q'
+    } while (strcmp(longString, "q") != 0); // Continue the loop until 'q' is entered
 
-    //	printf("*** End of Converting Strings to int Demo ***\n\n");
-    printf("*** End of Converting Strings to double Demo ***\n\n");
+    // Ending message for the demo
+    printf("*** End of Converting Strings to long Demo ***\n\n");
 }
-/* Version 3 */
-//void convertingToLong(void) {
-//    printf("*** Start of Converting Strings to long Demo ***\n");
-//    char longString[BUFFER_SIZE];
-//    long longNumber;
-//    do {
-//        printf("Type the long numeric string (q - to quit):\n");
-//        fgets(longString, BUFFER_SIZE, stdin);
-//        longString[strlen(longString) - 1] = '\0';
-//        if ((strcmp(longString, "q") != 0)) {
-//            longNumber = atol(longString);
-//            printf("Converted number is %ld\n", longNumber);
-//        }
-//    } while (strcmp(longString, "q") != 0);
-//    printf("*** End of Converting Strings to long Demo ***\n\n");
-//}
