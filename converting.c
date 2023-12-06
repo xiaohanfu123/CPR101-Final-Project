@@ -55,6 +55,7 @@ Final Project
 //}
 
 /* Version 2 */
+//The function void converting(void) converts a string representation of an integer into its corresponding double value.
 void convertingToDouble(void) {
     //	// Print a message to the screen to indicate the what this demo is doing.
     printf("*** Start of Converting Strings to double Demo ***\n");
