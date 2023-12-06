@@ -1,0 +1,51 @@
+Tokenizing testing
+
+------Version 1-------
+Test case 1:
+*** Start of Tokenizing Words Demo ***
+Type a few words separated by space (q - to quit):
+Hello World! Today is 11 / 28 / 2023
+Word #1 is 'Hello'
+Word #2 is 'World!'
+Word #3 is 'Today'
+Word #4 is 'is'
+Word #5 is '11'
+Word #6 is '/'
+Word #7 is '28'
+Word #8 is '/'
+Word #9 is '2023'
+Type a few words separated by space (q - to quit):
+
+
+Test case 2:
+Type a few words separated by space (q - to quit):
+
+Type a few words separated by space (q - to quit):
+
+
+Test case 3:
+Type a few words separated by space (q - to quit):
+ 
+Type a few words separated by space (q - to quit):
+
+
+Test case 4:
+Type a few words separated by space (q - to quit):
+Hello     World!
+Word #1 is 'Hello'
+Word #2 is 'World!'
+Type a few words separated by space (q - to quit):
+
+
+Test case 5:
+Type a few words separated by space (q - to quit):
+q
+*** End of Tokenizing Words Demo ***
+
+Test case 6:
+Type a few words separated by space (q - to quit):
+q Hello World!
+Word #1 is 'q'
+Word #2 is 'Hello'
+Word #3 is 'World!'
+*** End of Tokenizing Words Demo ***
