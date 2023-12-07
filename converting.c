@@ -109,6 +109,6 @@ void converting(void) {
         }
     } while (strcmp(longString, "q") != 0); // Continue the loop until 'q' is entered
 
-    // Ending message for the demo
+    // Ending message for the demo Converting
     printf("*** End of Converting Strings to long Demo ***\n\n");
 }
