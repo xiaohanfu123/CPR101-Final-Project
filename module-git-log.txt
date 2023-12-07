@@ -1,0 +1,540 @@
+commit ab1b2672769cd36c4f6afa4400e2a80f816b5449
+Author: HANFU XIAO <hxiao15@mySeneca.ca>
+Date:   Wed Dec 6 02:30:35 2023 -0500
+
+    Version 2
+
+diff --git a/Converting_testing.txt b/Converting_testing.txt
+index 3d9b05e..b2c70a3 100644
+--- a/Converting_testing.txt
++++ b/Converting_testing.txt
+@@ -19,4 +19,20 @@ Type an int numeric string (q - to quit):
+ Converted number is 2147483647
+ Type an int numeric string (q - to quit):
+ 1234 4321
+-Converted number is 1234
+\ No newline at end of file
++Converted number is 1234
++
++*** Start of Converting Strings to double Demo ***
++Type the double numeric string (q - to quit):
++12.34
++Converted number is 12.340000
++Type the double numeric string (q - to quit):
++.123456
++Converted number is 0.123456
++Type the double numeric string (q - to quit):
++.123 456
++Converted number is 0.123000
++Type the double numeric string (q - to quit):
++0.12345674987987498165
++Converted number is 0.123457
++Type the double numeric string (q - to quit):
++1
+diff --git a/converting-test-cases.xlsx b/converting-test-cases.xlsx
+index beae68a..54dd640 100644
+Binary files a/converting-test-cases.xlsx and b/converting-test-cases.xlsx differ
+
+commit 7424dd8cabd3f41c2013ea77870d38d51e6070ba
+Author: HANFU XIAO <hxiao15@mySeneca.ca>
+Date:   Wed Dec 6 02:28:59 2023 -0500
+
+    Version 1
+
+diff --git a/Converting_testing.txt b/Converting_testing.txt
+new file mode 100644
+index 0000000..3d9b05e
+--- /dev/null
++++ b/Converting_testing.txt
+@@ -0,0 +1,22 @@
++*** Start of Converting Strings to int Demo ***
++Type an int numeric string (q - to quit):
++1234
++Converted number is 1234
++Type an int numeric string (q - to quit):
++-123321
++Converted number is -123321
++Type an int numeric string (q - to quit):
++     456
++Converted number is 456
++Type an int numeric string (q - to quit):
++     789
++Converted number is 789
++Type an int numeric string (q - to quit):
++-555555555555
++Converted number is -2147483648
++Type an int numeric string (q - to quit):
++555555555555555
++Converted number is 2147483647
++Type an int numeric string (q - to quit):
++1234 4321
++Converted number is 1234
+\ No newline at end of file
+
+commit 5e9bca1bda6d4bc1c664011710281f54c0feb597
+Author: HANFU XIAO <hxiao15@mySeneca.ca>
+Date:   Wed Dec 6 02:10:50 2023 -0500
+
+    Version 1
+
+diff --git a/converting-test-cases.xlsx b/converting-test-cases.xlsx
+new file mode 100644
+index 0000000..beae68a
+Binary files /dev/null and b/converting-test-cases.xlsx differ
+
+commit daa261c6998370219bfd30f65f72ab534336b248
+Author: HANFU XIAO <hxiao15@mySeneca.ca>
+Date:   Wed Dec 6 02:07:17 2023 -0500
+
+    Version2
+
+diff --git a/converting.c b/converting.c
+index 76da2e6..b1262fe 100644
+--- a/converting.c
++++ b/converting.c
+@@ -55,6 +55,7 @@ Final Project
+ //}
+ 
+ /* Version 2 */
++//The function void converting(void) converts a string representation of an integer into its corresponding double value.
+ void convertingToDouble(void) {
+     //	// Print a message to the screen to indicate the what this demo is doing.
+     printf("*** Start of Converting Strings to double Demo ***\n");
+
+commit 9f2058d22ba8058ff5bd2f1299404da214cd7beb
+Author: HANFU XIAO <hxiao15@mySeneca.ca>
+Date:   Wed Dec 6 01:55:47 2023 -0500
+
+    Version 1
+
+diff --git a/converting.c b/converting.c
+index 9db1e47..76da2e6 100644
+--- a/converting.c
++++ b/converting.c
+@@ -18,59 +18,74 @@ Final Project
+ 
+ // v1
+ //The function void converting(void) converts a string representation of an integer into its corresponding integer value.
+-void converting(void) {
+-	// Print a message to the screen to indicate the what this demo is doing.
+-	printf("*** Start of Converting Strings to int Demo ***\n");
++//void converting(void) {
++//	// Print a message to the screen to indicate the what this demo is doing.
++//	printf("*** Start of Converting Strings to int Demo ***\n");
++//
++//	// Declare a character array that can hold up to BUFFER_SIZE characters
++//	char intString[BUFFER_SIZE];
++//
++//	
++//	int intNumber; // Declare an integer variable to hold the converted number
++//
++//	// Start a loop that will keep running until the user decides to quit
++//	do {
++//		// Prompt the user to type a number as a string of characters
++//		printf("Type an int numeric string (q - to quit):\n");
++//
++//		// Read the input from the user into the intString variable
++//		fgets(intString, BUFFER_SIZE, stdin);
++//
++//		// Replace the newline character (entered when the user presses enter) with a null terminator to mark the end of the string
++//		intString[strlen(intString) - 1] = '\0';
++//
++//		// Check if the user entered 'q' to quit. If not, proceed to convert the string to an integer
++//		if (strcmp(intString, "q") != 0) {
++//			// Use atoi (ASCII to Integer) function to convert the string to an integer
++//			intNumber = atoi(intString);
++//
++//			// Print the converted integer to the screen
++//			printf("Converted number is %d\n", intNumber);
++//		}
++//		
++//	} while (strcmp(intString, "q") != 0); // If 'q' was entered, exit the loop
++//
++//	// Print a message indicating the end of the program
++//	printf("*** End of Converting Strings to int Demo ***\n\n");
++//}
+ 
+-	// Declare a character array that can hold up to BUFFER_SIZE characters
+-	char intString[BUFFER_SIZE];
++/* Version 2 */
++void convertingToDouble(void) {
++    //	// Print a message to the screen to indicate the what this demo is doing.
++    printf("*** Start of Converting Strings to double Demo ***\n");
+ 
+-	
+-	int intNumber; // Declare an integer variable to hold the converted number
++    // Declare a buffer to hold the user input
++    char doubleString[BUFFER_SIZE];
++    double doubleNumber;
+ 
+-	// Start a loop that will keep running until the user decides to quit
+-	do {
+-		// Prompt the user to type a number as a string of characters
+-		printf("Type an int numeric string (q - to quit):\n");
++    do {
++        // Prompt the user to enter a double value in string format or 'q' to quit
++        printf("Type the double numeric string (q - to quit):\n");
+ 
+-		// Read the input from the user into the intString variable
+-		fgets(intString, BUFFER_SIZE, stdin);
++        // Read the input from the user into the buffer
++        fgets(doubleString, BUFFER_SIZE, stdin);
+ 
+-		// Replace the newline character (entered when the user presses enter) with a null terminator to mark the end of the string
+-		intString[strlen(intString) - 1] = '\0';
++        // Replace the newline character added by fgets with a null terminator to properly format the string
++        doubleString[strlen(doubleString) - 1] = '\0';
+ 
+-		// Check if the user entered 'q' to quit. If not, proceed to convert the string to an integer
+-		if (strcmp(intString, "q") != 0) {
+-			// Use atoi (ASCII to Integer) function to convert the string to an integer
+-			intNumber = atoi(intString);
++        // Check if the user wants to quit the loop; if not, proceed with conversion
++        if ((strcmp(doubleString, "q") != 0)) {
++            // Convert the string to a double using atof, which interprets the string as a floating-point number
++            doubleNumber = atof(doubleString);
+ 
+-			// Print the converted integer to the screen
+-			printf("Converted number is %d\n", intNumber);
+-		}
+-		
+-	} while (strcmp(intString, "q") != 0); // If 'q' was entered, exit the loop
++            // Output the converted number
++            printf("Converted number is %f\n", doubleNumber);
++        }
++    } while (strcmp(doubleString, "q") != 0); // Continue the loop until the user decides to quit by entering 'q'
+ 
+-	// Print a message indicating the end of the program
+-	printf("*** End of Converting Strings to int Demo ***\n\n");
++    //	printf("*** End of Converting Strings to int Demo ***\n\n");
++    printf("*** End of Converting Strings to double Demo ***\n\n");
+ }
+-
+-/* Version 2 */
+-//void convertingToDouble(void) {
+-//    printf("*** Start of Converting Strings to double Demo ***\n");
+-//    char doubleString[BUFFER_SIZE];
+-//    double doubleNumber;
+-//    do {
+-//        printf("Type the double numeric string (q - to quit):\n");
+-//        fgets(doubleString, BUFFER_SIZE, stdin);
+-//        doubleString[strlen(doubleString) - 1] = '\0';
+-//        if ((strcmp(doubleString, "q") != 0)) {
+-//            doubleNumber = atof(doubleString);
+-//            printf("Converted number is %f\n", doubleNumber);
+-//        }
+-//    } while (strcmp(doubleString, "q") != 0);
+-//    printf("*** End of Converting Strings to double Demo ***\n\n");
+-//}
+-
+ /* Version 3 */
+ //void convertingToLong(void) {
+ //    printf("*** Start of Converting Strings to long Demo ***\n");
+
+commit e60f9ea95976a506a252f6d303c1784144b747f4
+Author: HANFU XIAO <hxiao15@mySeneca.ca>
+Date:   Mon Dec 4 23:33:36 2023 -0500
+
+    V2
+
+diff --git a/converting.c b/converting.c
+new file mode 100644
+index 0000000..9db1e47
+--- /dev/null
++++ b/converting.c
+@@ -0,0 +1,89 @@
++// CONVERTING MODULE SOURCE
++#define _CRT_SECURE_NO_WARNINGS
++#define BUFFER_SIZE 80 //Defined macro 'BUFFER_SIZE' setting the max string length to convert.
++#include <stdio.h>
++#include <string.h> 
++#include <stdlib.h>
++#include "converting.h"
++
++/*
++Author: Hanfu Xiao
++Email: hxiao15@myseneca.ca
++ID: 033503145
++Date Written: 11-28-2023
++Course: CPR101.NNN
++Final Project
++*/
++
++
++// v1
++//The function void converting(void) converts a string representation of an integer into its corresponding integer value.
++void converting(void) {
++	// Print a message to the screen to indicate the what this demo is doing.
++	printf("*** Start of Converting Strings to int Demo ***\n");
++
++	// Declare a character array that can hold up to BUFFER_SIZE characters
++	char intString[BUFFER_SIZE];
++
++	
++	int intNumber; // Declare an integer variable to hold the converted number
++
++	// Start a loop that will keep running until the user decides to quit
++	do {
++		// Prompt the user to type a number as a string of characters
++		printf("Type an int numeric string (q - to quit):\n");
++
++		// Read the input from the user into the intString variable
++		fgets(intString, BUFFER_SIZE, stdin);
++
++		// Replace the newline character (entered when the user presses enter) with a null terminator to mark the end of the string
++		intString[strlen(intString) - 1] = '\0';
++
++		// Check if the user entered 'q' to quit. If not, proceed to convert the string to an integer
++		if (strcmp(intString, "q") != 0) {
++			// Use atoi (ASCII to Integer) function to convert the string to an integer
++			intNumber = atoi(intString);
++
++			// Print the converted integer to the screen
++			printf("Converted number is %d\n", intNumber);
++		}
++		
++	} while (strcmp(intString, "q") != 0); // If 'q' was entered, exit the loop
++
++	// Print a message indicating the end of the program
++	printf("*** End of Converting Strings to int Demo ***\n\n");
++}
++
++/* Version 2 */
++//void convertingToDouble(void) {
++//    printf("*** Start of Converting Strings to double Demo ***\n");
++//    char doubleString[BUFFER_SIZE];
++//    double doubleNumber;
++//    do {
++//        printf("Type the double numeric string (q - to quit):\n");
++//        fgets(doubleString, BUFFER_SIZE, stdin);
++//        doubleString[strlen(doubleString) - 1] = '\0';
++//        if ((strcmp(doubleString, "q") != 0)) {
++//            doubleNumber = atof(doubleString);
++//            printf("Converted number is %f\n", doubleNumber);
++//        }
++//    } while (strcmp(doubleString, "q") != 0);
++//    printf("*** End of Converting Strings to double Demo ***\n\n");
++//}
++
++/* Version 3 */
++//void convertingToLong(void) {
++//    printf("*** Start of Converting Strings to long Demo ***\n");
++//    char longString[BUFFER_SIZE];
++//    long longNumber;
++//    do {
++//        printf("Type the long numeric string (q - to quit):\n");
++//        fgets(longString, BUFFER_SIZE, stdin);
++//        longString[strlen(longString) - 1] = '\0';
++//        if ((strcmp(longString, "q") != 0)) {
++//            longNumber = atol(longString);
++//            printf("Converted number is %ld\n", longNumber);
++//        }
++//    } while (strcmp(longString, "q") != 0);
++//    printf("*** End of Converting Strings to long Demo ***\n\n");
++//}
+\ No newline at end of file
+diff --git a/converting.h b/converting.h
+new file mode 100644
+index 0000000..ebc3131
+--- /dev/null
++++ b/converting.h
+@@ -0,0 +1,8 @@
++// CONVERTING MODULE HEADER
++#ifndef _CONVERTING_H_
++#define _CONVERTING_H_
++#include <stdio.h>
++#include <string.h>
++#include <stdlib.h>
++void converting(void);
++#endif
+\ No newline at end of file
+diff --git a/main.c b/main.c
+new file mode 100644
+index 0000000..dc922ad
+--- /dev/null
++++ b/main.c
+@@ -0,0 +1,40 @@
++#define _CRT_SECURE_NO_WARNINGS
++#include <stdio.h>
++#include <string.h> 
++#include <stdlib.h>
++#include "fundamentals.h"
++#include "manipulating.h"
++#include "converting.h"
++#include "tokenizing.h"
++
++
++
++int main(void) {
++    char buff[10];
++    do {
++        printf("1 - Fundamentals\n");
++        printf("2 - Manipulation\n");
++        printf("3 - Converting\n");
++        printf("4 - Tokenizing\n");
++        printf("0 - Exit\n");
++        printf("Which module to run? \n");
++        fgets(buff, 10, stdin);
++
++        switch (buff[0]) {
++        case '1':
++            fundamentals();
++            break;
++        case '2':
++            manipulating();
++            break;
++        case '3':
++            converting();
++            break;
++        case '4':
++            tokenizing();
++            break;
++        }
++    } while (buff[0] != '0');
++
++    return 0;
++}
+\ No newline at end of file
+diff --git a/manipulating.c b/manipulating.c
+new file mode 100644
+index 0000000..afd33ff
+--- /dev/null
++++ b/manipulating.c
+@@ -0,0 +1,114 @@
++#define _CRT_SECURE_NO_WARNINGS
++/*
++Author: Jarvinia Zhao
++Email: jzhao169@myseneca.ca
++ID: 143013233
++Date Written: 11-27-2023
++Course: CPR101.NNN
++Final Project
++*/
++
++/* The costomized library "manipulating.h" header file provides :
++    2 standard libraies: stdio.h and string.h
++    Defined macro 'BUFFER_SIZE' setting the max string length for manipulation
++    Prototype for function manipulating
++*/
++#include "manipulating.h"  
++
++/*
++Function Purpose: This function provides the functionality to manipulate Cstings
++*/
++void manipulating(void) {
++/* Version 1 */
++    //------------- Demo of String Concatenate ---------------
++    
++    // Display the starting message for user to understand the purpose of this demo
++    printf("**** Start of Concatenating Strings Demo ****\n");
++    // Declare 2 Cstring to store the string for concatenation 
++    char string1[BUFFER_SIZE]; // first string 
++    char string2[BUFFER_SIZE]; // second string - concatenate to the end of first string
++    
++    // Start a loop at least once and will continue until the user enter q to quit
++    do {
++        // Prompt the user for the first string
++        printf("Type the 1st string (q - to quit):\n");
++        fgets(string1, BUFFER_SIZE, stdin); // Read the first input string from user
++        // Remove the newline character at the end of the input string
++        string1[strlen(string1) - 1] = '\0';
++
++        // Check whether the user wants to exit current demo. If user input 'q', then exit the demo
++        if (strcmp(string1, "q") == 0) {
++            break;
++        }
++
++        // Prompt the user for the second string
++        printf("Type the 2nd string:\n");
++        fgets(string2, BUFFER_SIZE, stdin); // Read the second input string from user
++        // Remove the newline character at the end of the input string
++        string2[strlen(string2) - 1] = '\0'; 
++
++        // Concatenate the string2 to the string1
++        strcat(string1, string2);
++        // Display the result after concatenation
++        printf("Concatenated string is '%s'\n", string1);
++
++    } while (strcmp(string1, "q") != 0); // Continue looping until the user enter 'q' for the string1
++
++    printf("**** End of Concatenating Strings Demo ****\n");
++
++
++/* Version 2 
++    printf("**** Start of Comparing Strings Demo ****\n");
++    char compare1[BUFFER_SIZE];
++    char compare2[BUFFER_SIZE];
++    int result;
++    do {
++        printf("Type the 1st string to compare (q - to quit):\n");
++        fgets(compare1, BUFFER_SIZE, stdin);
++        compare1[strlen(compare1) - 1] = '\0';
++        if (strcmp(compare1, "q") == 0) {
++            break;
++        }
++        printf("Type the 2nd string to compare:\n");
++        fgets(compare2, BUFFER_SIZE, stdin);
++        compare2[strlen(compare2) - 1] = '\0';
++        result = strcmp(compare1, compare2);
++        if (result < 0) {
++            printf("\"%s\" string is less than \"%s\"\n", compare1, compare2);
++        }
++        else if (result == 0) {
++            printf("\"%s\" string is equal to \"%s\"\n", compare1, compare2);
++        }
++        else {
++            printf("\"%s\" string is greater than \"%s\"\n", compare1, compare2);
++        }
++    } while (strcmp(compare1, "q") != 0);
++    printf("**** End of Comparing Strings Demo ****\n");
++    */
++
++/* Version 3 
++    printf("**** Start of Searching Strings Demo ****\n");
++    char haystack[BUFFER_SIZE];
++    char needle[BUFFER_SIZE];
++    char* occurrence = NULL;
++    do {
++        printf("Type the string (q - to quit):\n");
++        fgets(haystack, BUFFER_SIZE, stdin);
++        haystack[strlen(haystack) - 1] = '\0';
++        if (strcmp(haystack, "q") == 0) {
++            break;
++        }
++        printf("Type the substring:\n");
++        fgets(needle, BUFFER_SIZE, stdin);
++        needle[strlen(needle) - 1] = '\0';
++        occurrence = strstr(haystack, needle);
++        if (occurrence) {
++            printf("\"%s\" found at %d position\n", needle, (int)(occurrence - haystack));
++        }
++        else {
++            printf("Not found\n");
++        }
++    } while (strcmp(haystack, "q") != 0);
++    printf("**** End of Searching Strings Demo ****\n");
++    */
++}
+\ No newline at end of file
+diff --git a/manipulating.h b/manipulating.h
+new file mode 100644
+index 0000000..fdbd4a4
+--- /dev/null
++++ b/manipulating.h
+@@ -0,0 +1,15 @@
++#pragma once
++// MANIPULATING MODULE HEADER
++#ifndef _MANIPULATING_H_
++#define _MANIPULATING_H_
++
++#include <stdio.h>
++#include <string.h>
++
++#define BUFFER_SIZE 32 // Define a constant for maximum string length
++
++// manipulating prototype: Allow users to manipulate string input
++//Including: string concatenate
++void manipulating(void);
++
++#endif
+\ No newline at end of file
