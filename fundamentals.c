@@ -1,9 +1,6 @@
 // FUNDAMENTALS MODULE SOURCE
-#include <stdio.h>
-#include <string.h>
 #include "fundamentals.h"
 #define _CRT_SECURE_NO_WARNINGS
-#define BUFFER_SIZE 100
 #define NUM_INPUT_SIZE 20
 
 void fundamentals(void) {
@@ -29,4 +26,34 @@ void fundamentals(void) {
         }
     } while (strcmp(buffer1, "q") != 0);
     printf("*** End of Indexing strings Demo ***\n\n");// end of the program.
+    //V2
+    printf("^^^ Start of Measuring Strings Demo ^^^\n");//welcomes the user.
+    char buffer2[BUFFER_SIZE];//the maximum letters that the user can type.
+    do {
+        printf("Type a string (q - to quit):\n");//ask the user to input a string or type q to quit the program.
+        fgets(buffer2, BUFFER_SIZE, stdin);//the letters or the string of the user input will compare to the maximum size.
+        buffer2[strlen(buffer2) - 1] = '\0';
+        if (strcmp(buffer2, "q") != '\0')
+            printf("The length of \'%s\' is %d characters\n",//the program shows the output of user input.
+                buffer2, (int)strlen(buffer2));//the names of %s and %d above.
+    } while (strcmp(buffer2, "q") != 0);//the program waits for the user to type in "q".
+    printf("*** End of Measuring strings Demo ***\n\n");//The bye message of the program after user type "q".
+    //V3
+    printf("*** Start of Copying Strings Demo ***\n");//Welcomes the user.
+    char destination[BUFFER_SIZE];//declaring that destination variable have the BUFFER_SIZE value characters.
+    char source[BUFFER_SIZE];//declaring that source variable have the BUFFER_SIZE value characters.
+    do {
+        destination[0] = '\0';//destination have 0 character then it equals to NULL
+        printf("Destination string is reset to empty\n");
+        printf("Type the source string (q - to quit):\n");
+        fgets(source, BUFFER_SIZE, stdin);//user input here and save to the source variable, checks if it in range of the BUFFER_SIZE value
+        source[strlen(source) - 1] = '\0';
+        if (strcmp(source, "q") != 0) {//if user input q the program end
+            strcpy(destination, source);//the user input the source value and copy it on the destination value.
+            printf("New destination string is \'%s\'\n", destination);// prints out the user input.
+        }
+    } while (strcmp(source, "q") != 0);
+    printf("*** End of Copying Strings Demo ***\n\n");//bye message
 }
+
+
