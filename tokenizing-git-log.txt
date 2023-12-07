@@ -1,0 +1,1031 @@
+commit 2eba2268790551b3e40fce141f35a17cf41d95ea
+Author: whchau1 <whchau1@myseneca.ca>
+Date:   Wed Dec 6 20:54:29 2023 -0500
+
+    V3 - submit the git log for tokenizing
+
+diff --git a/tokenizing-git-log.txt b/tokenizing-git-log.txt
+new file mode 100644
+index 0000000..a6d7e83
+--- /dev/null
++++ b/tokenizing-git-log.txt
+@@ -0,0 +1,509 @@
++commit 7597e9cb8d67b146b86f3d9c7ec732b654bd43c4
++Author: whchau1 <whchau1@myseneca.ca>
++Date:   Wed Dec 6 20:50:12 2023 -0500
++
++    V3
++
++diff --git a/tokenizing-test-cases.xlsx b/tokenizing-test-cases.xlsx
++index a5db0a7..ca677c1 100644
++Binary files a/tokenizing-test-cases.xlsx and b/tokenizing-test-cases.xlsx differ
++diff --git a/tokenizing.c b/tokenizing.c
++index 6caea55..ec654f6 100644
++--- a/tokenizing.c
+++++ b/tokenizing.c
++@@ -2,7 +2,7 @@
++ Author: Wing Ho Chau
++ Email: myseneca@myseneca.ca
++ ID: 150924231
++-Date Written: 12-1-2023
+++Date Written: 12-6-2023
++ Course: CPR101.NNN
++ Final Project
++ */
++@@ -22,7 +22,7 @@ void tokenizing() {
++ 	//do {
++ 	//	printf("Type a few words separated by space (q - to quit):\n");
++ 	//	fgets(words, BUFFER_SIZE, stdin);  //receives input from user and store in words[]
++-	//	words[strlen(words) - 1] = '\0';  //Put a null terminator to the end of array
+++	//	words[strlen(words) - 1] = '\0';  //Put a null terminator to the end of array to end the array
++ 	//	if (strcmp(words, "q") != 0) {  //Do the tokenizing if user doesn't input 'q'
++ 	//		nextWord = strtok(words, " ");  //use of tokenizing function to tokenize the word by delimiter 'whitespace'
++ 	//		wordsCounter = 1;  //Count the words, start with 1
++@@ -36,29 +36,45 @@ void tokenizing() {
++ 
++ 
++ /* Version 2 */
++-//>> insert here
+++	//printf("*** Start of Tokenizing Words Demo ***\n");
+++	//char phrases[BUFFER_SIZE];  //phrases will be used for user input
+++	//char* nextPhrase = NULL;  //nextPhrase is an array to store the return of tokenized strings.
+++	//int phrasesCounter;  //phrasesCounter will be used to count how many tokenized phrases are in the delimited input
+++
+++	//do {
+++	//	printf("Type a few words separated by space (q - to quit):\n");
+++	//	fgets(phrases, BUFFER_SIZE, stdin);  //receives input from user and store in phrases[]
+++	//	phrases[strlen(phrases) - 1] = '\0';  //Put a null terminator to the end of array to end the array
+++	//	if (strcmp(phrases, "q") != 0) {  //Do the tokenizing if user doesn't input 'q'
+++	//		nextPhrase = strtok(phrases, ",");  //use of tokenizing function to tokenize the input by delimiter ','(comma)
+++	//		phrasesCounter = 1;  //Count the words, start with 1
+++	//		while (nextPhrase) {  //A loop for printing tokenized phrases unless no more are found
+++	//			printf("Phrase #%d is \'%s\'\n", phrasesCounter++, nextPhrase); //Print the tokenized phrases
+++	//			nextPhrase = strtok(NULL, ",");  //Get the next tokenized phrases
+++	//		}
+++	//	}
+++	//} while (strcmp(phrases, "q") != 0);  //infinite loop unless 'q' is input by user
+++	//printf("*** End of Tokenizing Words Demo ***\n\n");
+++
+++/* Version 3 */
++ 	printf("*** Start of Tokenizing Words Demo ***\n");
++-	char phrases[BUFFER_SIZE];  //phrases will be used for user input and is the argument for 
++-	char* nextPhrase = NULL;  //nextPhrase is an array to store the return of tokenized strings.
++-	int phrasesCounter;  //phrasesCounter will be used to count how many tokenized phrases are in the delimited input
+++	char sentences[BUFFER_SIZE];  //sentences will be used for user input
+++	char* nextSentence = NULL;  //nextSentences is an array to store the return of tokenized strings.
+++	int sentencesCounter;  //sentencesCounter will be used to count how many sentences are in the delimited input
++ 
++ 	do {
++ 		printf("Type a few words separated by space (q - to quit):\n");
++-		fgets(phrases, BUFFER_SIZE, stdin);  //receives input from user and store in phrases[]
++-		phrases[strlen(phrases) - 1] = '\0';  //Put a null terminator to the end of array
++-		if (strcmp(phrases, "q") != 0) {  //Do the tokenizing if user doesn't input 'q'
++-			nextPhrase = strtok(phrases, ",");  //use of tokenizing function to tokenize the input by delimiter ','(comma)
++-			phrasesCounter = 1;  //Count the words, start with 1
++-			while (nextPhrase) {  //A loop for printing tokenized phrases unless no more are found
++-				printf("Phrase #%d is \'%s\'\n", phrasesCounter++, nextPhrase); //Print the tokenized phrases
++-				nextPhrase = strtok(NULL, ",");  //Get the next tokenized phrases
+++		fgets(sentences, BUFFER_SIZE, stdin);  //receives input from user and store in sentences[]
+++		sentences[strlen(sentences) - 1] = '\0';  //Put a null terminator to the end the array to end the array
+++		if (strcmp(sentences, "q") != 0) {  //Do the tokenizing if user doesn't input 'q'
+++			nextSentence = strtok(sentences, ".");  //use of tokenizing function to tokenize the word by delimiter '.'
+++			sentencesCounter = 1;  //Count the sentences, start with 1
+++			while (nextSentence) {  //A loop for printing tokenized sentences unless no more are found
+++				printf("Sentence #%d is \'%s\'\n", sentencesCounter++, nextSentence); //Print the tokenized sentences
+++				nextSentence = strtok(NULL, ".");  //Get the next tokenized sentences
++ 			}
++ 		}
++-	} while (strcmp(phrases, "q") != 0);  //infinite loop unless 'q' is input by user
+++	} while (strcmp(sentences, "q") != 0);  //infinite loop unless 'q' is input by user
++ 	printf("*** End of Tokenizing Words Demo ***\n\n");
++ 
++-/* Version 3 */
++-//>> insert here
++-
++-
++ }
++\ No newline at end of file
++diff --git a/tokenizing_testing.txt b/tokenizing_testing.txt
++index 661a37a..ad903df 100644
++--- a/tokenizing_testing.txt
+++++ b/tokenizing_testing.txt
++@@ -104,4 +104,80 @@ Test case 6:Type a few words separated by space (q - to quit):
++ q,123
++ Phrase #1 is 'q'
++ Phrase #2 is '123'
+++*** End of Tokenizing Words Demo ***
+++
+++
+++------Version 3-------
+++Test case 1:
+++*** Start of Tokenizing Words Demo ***
+++Type a few words separated by space (q - to quit):
+++I am here. I am going to test this program. This is test case 1.
+++Sentence #1 is 'I am here'
+++Sentence #2 is ' I am going to test this program'
+++Sentence #3 is ' This is test case 1'
+++Type a few words separated by space (q - to quit):
+++
+++
+++Test case 2:
+++Type a few words separated by space (q - to quit):
+++This is test case 2, and it has no period in the sentences
+++Sentence #1 is 'This is test case 2, and it has no period in the sentences'
+++Type a few words separated by space (q - to quit):
+++
+++
+++Test case 3:
+++Type a few words separated by space (q - to quit):
+++This is test case 3.....I put five period between sentences
+++Sentence #1 is 'This is test case 3'
+++Sentence #2 is 'I put five period between sentences'
+++Type a few words separated by space (q - to quit):
+++
+++
+++Test case 4:
+++Type a few words separated by space (q - to quit):
+++This is sentence 1.This is sentence 2.This is sentence 3.This is sentence 4.This is sentence 5.This is sentence 6.This is sentence 7.This is sentence 8.This is sentence 9.This is sentence 10.This is sentence 11.This is sentence 12.This is sentence 13.This is sentence 14.This is sentence 15.This is sentence 16.This is sentence 17.This is sentence 18.This is sentence 19.This is sentence 20.This is sentence 21.This is sentence 22.This is sentence 23.This is sentence 24
+++Sentence #1 is 'This is sentence 1'
+++Sentence #2 is 'This is sentence 2'
+++Sentence #3 is 'This is sentence 3'
+++Sentence #4 is 'This is sentence 4'
+++Sentence #5 is 'This is sentence 5'
+++Sentence #6 is 'This is sentence 6'
+++Sentence #7 is 'This is sentence 7'
+++Sentence #8 is 'This is sentence 8'
+++Sentence #9 is 'This is sentence 9'
+++Sentence #10 is 'This is sentence 10'
+++Sentence #11 is 'This is sentence 11'
+++Sentence #12 is 'This is sentence 12'
+++Sentence #13 is 'This is sentence 13'
+++Sentence #14 is 'This is sentence 14'
+++Sentence #15 is 'This is sentence 15'
+++Sentence #16 is 'This is'
+++Type a few words separated by space (q - to quit):
+++Sentence #1 is 'sentence 16'
+++Sentence #2 is 'This is sentence 17'
+++Sentence #3 is 'This is sentence 18'
+++Sentence #4 is 'This is sentence 19'
+++Sentence #5 is 'This is sentence 20'
+++Sentence #6 is 'This is sentence 21'
+++Sentence #7 is 'This is sentence 22'
+++Sentence #8 is 'This is sentence 23'
+++Sentence #9 is 'This is sentence 24'
+++Type a few words separated by space (q - to quit):
+++
+++
+++Test case 5:
+++Type a few words separated by space (q - to quit):
+++question one. question two. answer
+++Sentence #1 is 'question one'
+++Sentence #2 is ' question two'
+++Sentence #3 is ' answer'
+++Type a few words separated by space (q - to quit):
+++
+++
+++Test csae 6:
+++Type a few words separated by space (q - to quit):
+++q. This is test case 6. If the promgram is correct, the loop with continues.
+++Sentence #1 is 'q'
+++Sentence #2 is ' This is test case 6'
+++Sentence #3 is ' If the promgram is correct, the loop with continues'
++ *** End of Tokenizing Words Demo ***
++\ No newline at end of file
++
++commit 6400cfc1dca1c37ed5f8adbc1137647cb75b6fc5
++Author: whchau1 <whchau1@myseneca.ca>
++Date:   Wed Dec 6 04:13:06 2023 -0500
++
++    V2
++
++diff --git a/tokenizing-test-cases.xlsx b/tokenizing-test-cases.xlsx
++index 8f78ee1..a5db0a7 100644
++Binary files a/tokenizing-test-cases.xlsx and b/tokenizing-test-cases.xlsx differ
++diff --git a/tokenizing.c b/tokenizing.c
++index f0b6640..6caea55 100644
++--- a/tokenizing.c
+++++ b/tokenizing.c
++@@ -14,31 +14,49 @@ Final Project
++ 
++ void tokenizing() {
++ 	/* Version 1 */
+++	//printf("*** Start of Tokenizing Words Demo ***\n");
+++	//char words[BUFFER_SIZE];  //words will be used for user input
+++	//char* nextWord = NULL;  //nextWord is an array to store the return of tokenized strings.
+++	//int wordsCounter;  //wordsCounter will be used to count how many tokenized words are in the delimited input
+++
+++	//do {
+++	//	printf("Type a few words separated by space (q - to quit):\n");
+++	//	fgets(words, BUFFER_SIZE, stdin);  //receives input from user and store in words[]
+++	//	words[strlen(words) - 1] = '\0';  //Put a null terminator to the end of array
+++	//	if (strcmp(words, "q") != 0) {  //Do the tokenizing if user doesn't input 'q'
+++	//		nextWord = strtok(words, " ");  //use of tokenizing function to tokenize the word by delimiter 'whitespace'
+++	//		wordsCounter = 1;  //Count the words, start with 1
+++	//		while (nextWord) {  //A loop for printing tokenized words unless no more are found
+++	//			printf("Word #%d is \'%s\'\n", wordsCounter++, nextWord); //Print the tokenized words
+++	//			nextWord = strtok(NULL, " ");  //Get the next tokenized words
+++	//		}
+++	//	}
+++	//} while (strcmp(words, "q") != 0);  //infinite loop unless 'q' is input by user
+++	//printf("*** End of Tokenizing Words Demo ***\n\n");
+++
+++
+++/* Version 2 */
+++//>> insert here
++ 	printf("*** Start of Tokenizing Words Demo ***\n");
++-	char words[BUFFER_SIZE];  //words will be used for user input
++-	char* nextWord = NULL;  //nextWord is an array to store the return of tokenized strings.
++-	int wordsCounter;  //wordsCounter will be used to count how many tokenized words are in the delimited input
+++	char phrases[BUFFER_SIZE];  //phrases will be used for user input and is the argument for 
+++	char* nextPhrase = NULL;  //nextPhrase is an array to store the return of tokenized strings.
+++	int phrasesCounter;  //phrasesCounter will be used to count how many tokenized phrases are in the delimited input
++ 
++ 	do {
++ 		printf("Type a few words separated by space (q - to quit):\n");
++-		fgets(words, BUFFER_SIZE, stdin);  //receives input from user and store in words[]
++-		words[strlen(words) - 1] = '\0';  //Put a null terminator to the end of array
++-		if (strcmp(words, "q") != 0) {  //Do the tokenizing if user doesn't input 'q'
++-			nextWord = strtok(words, " ");  //use of tokenizing function to tokenize the word by delimiter 'whitespace'
++-			wordsCounter = 1;  //Count the words, start with 1
++-			while (nextWord) {  //A loop for printing tokenized words unless no more are found
++-				printf("Word #%d is \'%s\'\n", wordsCounter++, nextWord); //Print the tokenized words
++-				nextWord = strtok(NULL, " ");  //Get the next tokenized words
+++		fgets(phrases, BUFFER_SIZE, stdin);  //receives input from user and store in phrases[]
+++		phrases[strlen(phrases) - 1] = '\0';  //Put a null terminator to the end of array
+++		if (strcmp(phrases, "q") != 0) {  //Do the tokenizing if user doesn't input 'q'
+++			nextPhrase = strtok(phrases, ",");  //use of tokenizing function to tokenize the input by delimiter ','(comma)
+++			phrasesCounter = 1;  //Count the words, start with 1
+++			while (nextPhrase) {  //A loop for printing tokenized phrases unless no more are found
+++				printf("Phrase #%d is \'%s\'\n", phrasesCounter++, nextPhrase); //Print the tokenized phrases
+++				nextPhrase = strtok(NULL, ",");  //Get the next tokenized phrases
++ 			}
++ 		}
++-	} while (strcmp(words, "q") != 0);  //infinite loop unless 'q' is input by user
+++	} while (strcmp(phrases, "q") != 0);  //infinite loop unless 'q' is input by user
++ 	printf("*** End of Tokenizing Words Demo ***\n\n");
++ 
++-
++-/* Version 2 */
++-//>> insert here
++-
++-
++ /* Version 3 */
++ //>> insert here
++ 
++diff --git a/tokenizing_testing.txt b/tokenizing_testing.txt
++index a16c7b4..661a37a 100644
++--- a/tokenizing_testing.txt
+++++ b/tokenizing_testing.txt
++@@ -48,4 +48,60 @@ q Hello World!
++ Word #1 is 'q'
++ Word #2 is 'Hello'
++ Word #3 is 'World!'
+++*** End of Tokenizing Words Demo ***
+++
+++
+++
+++------Version 2-------
+++Test case 1:
+++*** Start of Tokenizing Words Demo ***
+++Type a few words separated by space (q - to quit):
+++Hello, World!!, 123, 1,2,3
+++Phrase #1 is 'Hello'
+++Phrase #2 is ' World!!'
+++Phrase #3 is ' 123'
+++Phrase #4 is ' 1'
+++Phrase #5 is '2'
+++Phrase #6 is '3'
+++Type a few words separated by space (q - to quit):
+++
+++
+++Test case 2:
+++Type a few words separated by space (q - to quit):
+++Hi123,,,,,,,,,,,,,,,,,Hi123
+++Phrase #1 is 'Hi123'
+++Phrase #2 is 'Hi123'
+++Type a few words separated by space (q - to quit):
+++
+++
+++Test case 3:
+++Type a few words separated by space (q - to quit):
+++,,,,,,,,,
+++Type a few words separated by space (q - to quit):
+++
+++
+++Test case 4:
+++Type a few words separated by space (q - to quit):
+++1111111110111111111011111111101111111110111111111011111111101111111110111111111011111111101111111110111111111011111111101111111110111111111011111111101111111110111111111011111111101111111110111111111011111111101111111110111111111011111111101111111110111111111011111111101111111110111111111011111111101111111110
+++Phrase #1 is '1111111110111111111011111111101111111110111111111011111111101111111110111111111011111111101111111110111111111011111111101111111110111111111011111111101111111110111111111011111111101111111110111111111011111111101111111110111111111011111111101111111110111111111011111111101111111110111111111011111111'
+++Type a few words separated by space (q - to quit):
+++Phrase #1 is '01111111110'
+++Type a few words separated by space (q - to quit):
+++
+++
+++Test case 5:
+++Type a few words separated by space (q - to quit):
+++1111111110111111111011111111101111111110111111111011111111101111111110111111111011111111101111111110,11111111101111111110111111111011111111101111111110111111111011111111101111111110111111111011111111101111111110,1111111110111111111011111111101111111110111111111011111111101111111110111111111011111111101111111110
+++Phrase #1 is '1111111110111111111011111111101111111110111111111011111111101111111110111111111011111111101111111110'
+++Phrase #2 is '11111111101111111110111111111011111111101111111110111111111011111111101111111110111111111011111111101111111110'
+++Phrase #3 is '11111111101111111110111111111011111111101111111110111111111011111111101111111110111111'
+++Type a few words separated by space (q - to quit):
+++Phrase #1 is '1101111111110'
+++Type a few words separated by space (q - to quit):
+++
+++
+++Test case 6:Type a few words separated by space (q - to quit):
+++q,123
+++Phrase #1 is 'q'
+++Phrase #2 is '123'
++ *** End of Tokenizing Words Demo ***
++\ No newline at end of file
++
++commit a7217e5b29a1713d77304914dc26e8f148d2d219
++Author: Daven <whchau1@myseneca.ca>
++Date:   Wed Dec 6 02:33:09 2023 -0500
++
++    V1 - modified comment
++
++diff --git a/tokenizing-test-cases.xlsx b/tokenizing-test-cases.xlsx
++index ea26f7c..8f78ee1 100644
++Binary files a/tokenizing-test-cases.xlsx and b/tokenizing-test-cases.xlsx differ
++diff --git a/tokenizing.c b/tokenizing.c
++index 3cb2bef..f0b6640 100644
++--- a/tokenizing.c
+++++ b/tokenizing.c
++@@ -2,7 +2,7 @@
++ Author: Wing Ho Chau
++ Email: myseneca@myseneca.ca
++ ID: 150924231
++-Date Written: 11-27-2023
+++Date Written: 12-1-2023
++ Course: CPR101.NNN
++ Final Project
++ */
++@@ -13,16 +13,16 @@ Final Project
++ #include "tokenizing.h"  //includes header file to point libaraies
++ 
++ void tokenizing() {
++-/* Version 1 */
+++	/* Version 1 */
++ 	printf("*** Start of Tokenizing Words Demo ***\n");
++-	char words[BUFFER_SIZE];  //words will be used for user input and is the argument for 
++-	char* nextWord = NULL;  //
++-	int wordsCounter;  //wordsCounter will be used to count how many words are in the delimited input
++-	
+++	char words[BUFFER_SIZE];  //words will be used for user input
+++	char* nextWord = NULL;  //nextWord is an array to store the return of tokenized strings.
+++	int wordsCounter;  //wordsCounter will be used to count how many tokenized words are in the delimited input
+++
++ 	do {
++ 		printf("Type a few words separated by space (q - to quit):\n");
++ 		fgets(words, BUFFER_SIZE, stdin);  //receives input from user and store in words[]
++-		words[strlen(words) - 1] = '\0';  //Put a null terminator to the end the array
+++		words[strlen(words) - 1] = '\0';  //Put a null terminator to the end of array
++ 		if (strcmp(words, "q") != 0) {  //Do the tokenizing if user doesn't input 'q'
++ 			nextWord = strtok(words, " ");  //use of tokenizing function to tokenize the word by delimiter 'whitespace'
++ 			wordsCounter = 1;  //Count the words, start with 1
++
++commit e3de54364152de16384aa516d22d65168a6685d1
++Author: Daven <whchau1@myseneca.ca>
++Date:   Wed Dec 6 01:56:41 2023 -0500
++
++    V1
++
++diff --git a/tokenizing-test-cases.xlsx b/tokenizing-test-cases.xlsx
++new file mode 100644
++index 0000000..ea26f7c
++Binary files /dev/null and b/tokenizing-test-cases.xlsx differ
++diff --git a/tokenizing.c b/tokenizing.c
++new file mode 100644
++index 0000000..3cb2bef
++--- /dev/null
+++++ b/tokenizing.c
++@@ -0,0 +1,46 @@
+++/*
+++Author: Wing Ho Chau
+++Email: myseneca@myseneca.ca
+++ID: 150924231
+++Date Written: 11-27-2023
+++Course: CPR101.NNN
+++Final Project
+++*/
+++
+++// TOKENIZING MODULE SOURCE
+++#define _CRT_SECURE_NO_WARNINGS  
+++#define BUFFER_SIZE 300  //Sets how many letters the user can input.
+++#include "tokenizing.h"  //includes header file to point libaraies
+++
+++void tokenizing() {
+++/* Version 1 */
+++	printf("*** Start of Tokenizing Words Demo ***\n");
+++	char words[BUFFER_SIZE];  //words will be used for user input and is the argument for 
+++	char* nextWord = NULL;  //
+++	int wordsCounter;  //wordsCounter will be used to count how many words are in the delimited input
+++	
+++	do {
+++		printf("Type a few words separated by space (q - to quit):\n");
+++		fgets(words, BUFFER_SIZE, stdin);  //receives input from user and store in words[]
+++		words[strlen(words) - 1] = '\0';  //Put a null terminator to the end the array
+++		if (strcmp(words, "q") != 0) {  //Do the tokenizing if user doesn't input 'q'
+++			nextWord = strtok(words, " ");  //use of tokenizing function to tokenize the word by delimiter 'whitespace'
+++			wordsCounter = 1;  //Count the words, start with 1
+++			while (nextWord) {  //A loop for printing tokenized words unless no more are found
+++				printf("Word #%d is \'%s\'\n", wordsCounter++, nextWord); //Print the tokenized words
+++				nextWord = strtok(NULL, " ");  //Get the next tokenized words
+++			}
+++		}
+++	} while (strcmp(words, "q") != 0);  //infinite loop unless 'q' is input by user
+++	printf("*** End of Tokenizing Words Demo ***\n\n");
+++
+++
+++/* Version 2 */
+++//>> insert here
+++
+++
+++/* Version 3 */
+++//>> insert here
+++
+++
+++}
++\ No newline at end of file
++diff --git a/tokenizing.h b/tokenizing.h
++new file mode 100644
++index 0000000..62e8745
++--- /dev/null
+++++ b/tokenizing.h
++@@ -0,0 +1,7 @@
+++//TOKENIZING MODULE HEADER
+++#ifndef _TOKENIZING_H_
+++#define _TOKENIZING_H_
+++#include <stdio.h>
+++#include <string.h>
+++void tokenizing(void);
+++#endif
++diff --git a/tokenizing_testing.txt b/tokenizing_testing.txt
++new file mode 100644
++index 0000000..a16c7b4
++--- /dev/null
+++++ b/tokenizing_testing.txt
++@@ -0,0 +1,51 @@
+++Tokenizing testing
+++
+++------Version 1-------
+++Test case 1:
+++*** Start of Tokenizing Words Demo ***
+++Type a few words separated by space (q - to quit):
+++Hello World! Today is 11 / 28 / 2023
+++Word #1 is 'Hello'
+++Word #2 is 'World!'
+++Word #3 is 'Today'
+++Word #4 is 'is'
+++Word #5 is '11'
+++Word #6 is '/'
+++Word #7 is '28'
+++Word #8 is '/'
+++Word #9 is '2023'
+++Type a few words separated by space (q - to quit):
+++
+++
+++Test case 2:
+++Type a few words separated by space (q - to quit):
+++
+++Type a few words separated by space (q - to quit):
+++
+++
+++Test case 3:
+++Type a few words separated by space (q - to quit):
+++ 
+++Type a few words separated by space (q - to quit):
+++
+++
+++Test case 4:
+++Type a few words separated by space (q - to quit):
+++Hello     World!
+++Word #1 is 'Hello'
+++Word #2 is 'World!'
+++Type a few words separated by space (q - to quit):
+++
+++
+++Test case 5:
+++Type a few words separated by space (q - to quit):
+++q
+++*** End of Tokenizing Words Demo ***
+++
+++Test case 6:
+++Type a few words separated by space (q - to quit):
+++q Hello World!
+++Word #1 is 'q'
+++Word #2 is 'Hello'
+++Word #3 is 'World!'
+++*** End of Tokenizing Words Demo ***
++\ No newline at end of file
+
+commit 7597e9cb8d67b146b86f3d9c7ec732b654bd43c4
+Author: whchau1 <whchau1@myseneca.ca>
+Date:   Wed Dec 6 20:50:12 2023 -0500
+
+    V3
+
+diff --git a/tokenizing-test-cases.xlsx b/tokenizing-test-cases.xlsx
+index a5db0a7..ca677c1 100644
+Binary files a/tokenizing-test-cases.xlsx and b/tokenizing-test-cases.xlsx differ
+diff --git a/tokenizing.c b/tokenizing.c
+index 6caea55..ec654f6 100644
+--- a/tokenizing.c
++++ b/tokenizing.c
+@@ -2,7 +2,7 @@
+ Author: Wing Ho Chau
+ Email: myseneca@myseneca.ca
+ ID: 150924231
+-Date Written: 12-1-2023
++Date Written: 12-6-2023
+ Course: CPR101.NNN
+ Final Project
+ */
+@@ -22,7 +22,7 @@ void tokenizing() {
+ 	//do {
+ 	//	printf("Type a few words separated by space (q - to quit):\n");
+ 	//	fgets(words, BUFFER_SIZE, stdin);  //receives input from user and store in words[]
+-	//	words[strlen(words) - 1] = '\0';  //Put a null terminator to the end of array
++	//	words[strlen(words) - 1] = '\0';  //Put a null terminator to the end of array to end the array
+ 	//	if (strcmp(words, "q") != 0) {  //Do the tokenizing if user doesn't input 'q'
+ 	//		nextWord = strtok(words, " ");  //use of tokenizing function to tokenize the word by delimiter 'whitespace'
+ 	//		wordsCounter = 1;  //Count the words, start with 1
+@@ -36,29 +36,45 @@ void tokenizing() {
+ 
+ 
+ /* Version 2 */
+-//>> insert here
++	//printf("*** Start of Tokenizing Words Demo ***\n");
++	//char phrases[BUFFER_SIZE];  //phrases will be used for user input
++	//char* nextPhrase = NULL;  //nextPhrase is an array to store the return of tokenized strings.
++	//int phrasesCounter;  //phrasesCounter will be used to count how many tokenized phrases are in the delimited input
++
++	//do {
++	//	printf("Type a few words separated by space (q - to quit):\n");
++	//	fgets(phrases, BUFFER_SIZE, stdin);  //receives input from user and store in phrases[]
++	//	phrases[strlen(phrases) - 1] = '\0';  //Put a null terminator to the end of array to end the array
++	//	if (strcmp(phrases, "q") != 0) {  //Do the tokenizing if user doesn't input 'q'
++	//		nextPhrase = strtok(phrases, ",");  //use of tokenizing function to tokenize the input by delimiter ','(comma)
++	//		phrasesCounter = 1;  //Count the words, start with 1
++	//		while (nextPhrase) {  //A loop for printing tokenized phrases unless no more are found
++	//			printf("Phrase #%d is \'%s\'\n", phrasesCounter++, nextPhrase); //Print the tokenized phrases
++	//			nextPhrase = strtok(NULL, ",");  //Get the next tokenized phrases
++	//		}
++	//	}
++	//} while (strcmp(phrases, "q") != 0);  //infinite loop unless 'q' is input by user
++	//printf("*** End of Tokenizing Words Demo ***\n\n");
++
++/* Version 3 */
+ 	printf("*** Start of Tokenizing Words Demo ***\n");
+-	char phrases[BUFFER_SIZE];  //phrases will be used for user input and is the argument for 
+-	char* nextPhrase = NULL;  //nextPhrase is an array to store the return of tokenized strings.
+-	int phrasesCounter;  //phrasesCounter will be used to count how many tokenized phrases are in the delimited input
++	char sentences[BUFFER_SIZE];  //sentences will be used for user input
++	char* nextSentence = NULL;  //nextSentences is an array to store the return of tokenized strings.
++	int sentencesCounter;  //sentencesCounter will be used to count how many sentences are in the delimited input
+ 
+ 	do {
+ 		printf("Type a few words separated by space (q - to quit):\n");
+-		fgets(phrases, BUFFER_SIZE, stdin);  //receives input from user and store in phrases[]
+-		phrases[strlen(phrases) - 1] = '\0';  //Put a null terminator to the end of array
+-		if (strcmp(phrases, "q") != 0) {  //Do the tokenizing if user doesn't input 'q'
+-			nextPhrase = strtok(phrases, ",");  //use of tokenizing function to tokenize the input by delimiter ','(comma)
+-			phrasesCounter = 1;  //Count the words, start with 1
+-			while (nextPhrase) {  //A loop for printing tokenized phrases unless no more are found
+-				printf("Phrase #%d is \'%s\'\n", phrasesCounter++, nextPhrase); //Print the tokenized phrases
+-				nextPhrase = strtok(NULL, ",");  //Get the next tokenized phrases
++		fgets(sentences, BUFFER_SIZE, stdin);  //receives input from user and store in sentences[]
++		sentences[strlen(sentences) - 1] = '\0';  //Put a null terminator to the end the array to end the array
++		if (strcmp(sentences, "q") != 0) {  //Do the tokenizing if user doesn't input 'q'
++			nextSentence = strtok(sentences, ".");  //use of tokenizing function to tokenize the word by delimiter '.'
++			sentencesCounter = 1;  //Count the sentences, start with 1
++			while (nextSentence) {  //A loop for printing tokenized sentences unless no more are found
++				printf("Sentence #%d is \'%s\'\n", sentencesCounter++, nextSentence); //Print the tokenized sentences
++				nextSentence = strtok(NULL, ".");  //Get the next tokenized sentences
+ 			}
+ 		}
+-	} while (strcmp(phrases, "q") != 0);  //infinite loop unless 'q' is input by user
++	} while (strcmp(sentences, "q") != 0);  //infinite loop unless 'q' is input by user
+ 	printf("*** End of Tokenizing Words Demo ***\n\n");
+ 
+-/* Version 3 */
+-//>> insert here
+-
+-
+ }
+\ No newline at end of file
+diff --git a/tokenizing_testing.txt b/tokenizing_testing.txt
+index 661a37a..ad903df 100644
+--- a/tokenizing_testing.txt
++++ b/tokenizing_testing.txt
+@@ -104,4 +104,80 @@ Test case 6:Type a few words separated by space (q - to quit):
+ q,123
+ Phrase #1 is 'q'
+ Phrase #2 is '123'
++*** End of Tokenizing Words Demo ***
++
++
++------Version 3-------
++Test case 1:
++*** Start of Tokenizing Words Demo ***
++Type a few words separated by space (q - to quit):
++I am here. I am going to test this program. This is test case 1.
++Sentence #1 is 'I am here'
++Sentence #2 is ' I am going to test this program'
++Sentence #3 is ' This is test case 1'
++Type a few words separated by space (q - to quit):
++
++
++Test case 2:
++Type a few words separated by space (q - to quit):
++This is test case 2, and it has no period in the sentences
++Sentence #1 is 'This is test case 2, and it has no period in the sentences'
++Type a few words separated by space (q - to quit):
++
++
++Test case 3:
++Type a few words separated by space (q - to quit):
++This is test case 3.....I put five period between sentences
++Sentence #1 is 'This is test case 3'
++Sentence #2 is 'I put five period between sentences'
++Type a few words separated by space (q - to quit):
++
++
++Test case 4:
++Type a few words separated by space (q - to quit):
++This is sentence 1.This is sentence 2.This is sentence 3.This is sentence 4.This is sentence 5.This is sentence 6.This is sentence 7.This is sentence 8.This is sentence 9.This is sentence 10.This is sentence 11.This is sentence 12.This is sentence 13.This is sentence 14.This is sentence 15.This is sentence 16.This is sentence 17.This is sentence 18.This is sentence 19.This is sentence 20.This is sentence 21.This is sentence 22.This is sentence 23.This is sentence 24
++Sentence #1 is 'This is sentence 1'
++Sentence #2 is 'This is sentence 2'
++Sentence #3 is 'This is sentence 3'
++Sentence #4 is 'This is sentence 4'
++Sentence #5 is 'This is sentence 5'
++Sentence #6 is 'This is sentence 6'
++Sentence #7 is 'This is sentence 7'
++Sentence #8 is 'This is sentence 8'
++Sentence #9 is 'This is sentence 9'
++Sentence #10 is 'This is sentence 10'
++Sentence #11 is 'This is sentence 11'
++Sentence #12 is 'This is sentence 12'
++Sentence #13 is 'This is sentence 13'
++Sentence #14 is 'This is sentence 14'
++Sentence #15 is 'This is sentence 15'
++Sentence #16 is 'This is'
++Type a few words separated by space (q - to quit):
++Sentence #1 is 'sentence 16'
++Sentence #2 is 'This is sentence 17'
++Sentence #3 is 'This is sentence 18'
++Sentence #4 is 'This is sentence 19'
++Sentence #5 is 'This is sentence 20'
++Sentence #6 is 'This is sentence 21'
++Sentence #7 is 'This is sentence 22'
++Sentence #8 is 'This is sentence 23'
++Sentence #9 is 'This is sentence 24'
++Type a few words separated by space (q - to quit):
++
++
++Test case 5:
++Type a few words separated by space (q - to quit):
++question one. question two. answer
++Sentence #1 is 'question one'
++Sentence #2 is ' question two'
++Sentence #3 is ' answer'
++Type a few words separated by space (q - to quit):
++
++
++Test csae 6:
++Type a few words separated by space (q - to quit):
++q. This is test case 6. If the promgram is correct, the loop with continues.
++Sentence #1 is 'q'
++Sentence #2 is ' This is test case 6'
++Sentence #3 is ' If the promgram is correct, the loop with continues'
+ *** End of Tokenizing Words Demo ***
+\ No newline at end of file
+
+commit 6400cfc1dca1c37ed5f8adbc1137647cb75b6fc5
+Author: whchau1 <whchau1@myseneca.ca>
+Date:   Wed Dec 6 04:13:06 2023 -0500
+
+    V2
+
+diff --git a/tokenizing-test-cases.xlsx b/tokenizing-test-cases.xlsx
+index 8f78ee1..a5db0a7 100644
+Binary files a/tokenizing-test-cases.xlsx and b/tokenizing-test-cases.xlsx differ
+diff --git a/tokenizing.c b/tokenizing.c
+index f0b6640..6caea55 100644
+--- a/tokenizing.c
++++ b/tokenizing.c
+@@ -14,31 +14,49 @@ Final Project
+ 
+ void tokenizing() {
+ 	/* Version 1 */
++	//printf("*** Start of Tokenizing Words Demo ***\n");
++	//char words[BUFFER_SIZE];  //words will be used for user input
++	//char* nextWord = NULL;  //nextWord is an array to store the return of tokenized strings.
++	//int wordsCounter;  //wordsCounter will be used to count how many tokenized words are in the delimited input
++
++	//do {
++	//	printf("Type a few words separated by space (q - to quit):\n");
++	//	fgets(words, BUFFER_SIZE, stdin);  //receives input from user and store in words[]
++	//	words[strlen(words) - 1] = '\0';  //Put a null terminator to the end of array
++	//	if (strcmp(words, "q") != 0) {  //Do the tokenizing if user doesn't input 'q'
++	//		nextWord = strtok(words, " ");  //use of tokenizing function to tokenize the word by delimiter 'whitespace'
++	//		wordsCounter = 1;  //Count the words, start with 1
++	//		while (nextWord) {  //A loop for printing tokenized words unless no more are found
++	//			printf("Word #%d is \'%s\'\n", wordsCounter++, nextWord); //Print the tokenized words
++	//			nextWord = strtok(NULL, " ");  //Get the next tokenized words
++	//		}
++	//	}
++	//} while (strcmp(words, "q") != 0);  //infinite loop unless 'q' is input by user
++	//printf("*** End of Tokenizing Words Demo ***\n\n");
++
++
++/* Version 2 */
++//>> insert here
+ 	printf("*** Start of Tokenizing Words Demo ***\n");
+-	char words[BUFFER_SIZE];  //words will be used for user input
+-	char* nextWord = NULL;  //nextWord is an array to store the return of tokenized strings.
+-	int wordsCounter;  //wordsCounter will be used to count how many tokenized words are in the delimited input
++	char phrases[BUFFER_SIZE];  //phrases will be used for user input and is the argument for 
++	char* nextPhrase = NULL;  //nextPhrase is an array to store the return of tokenized strings.
++	int phrasesCounter;  //phrasesCounter will be used to count how many tokenized phrases are in the delimited input
+ 
+ 	do {
+ 		printf("Type a few words separated by space (q - to quit):\n");
+-		fgets(words, BUFFER_SIZE, stdin);  //receives input from user and store in words[]
+-		words[strlen(words) - 1] = '\0';  //Put a null terminator to the end of array
+-		if (strcmp(words, "q") != 0) {  //Do the tokenizing if user doesn't input 'q'
+-			nextWord = strtok(words, " ");  //use of tokenizing function to tokenize the word by delimiter 'whitespace'
+-			wordsCounter = 1;  //Count the words, start with 1
+-			while (nextWord) {  //A loop for printing tokenized words unless no more are found
+-				printf("Word #%d is \'%s\'\n", wordsCounter++, nextWord); //Print the tokenized words
+-				nextWord = strtok(NULL, " ");  //Get the next tokenized words
++		fgets(phrases, BUFFER_SIZE, stdin);  //receives input from user and store in phrases[]
++		phrases[strlen(phrases) - 1] = '\0';  //Put a null terminator to the end of array
++		if (strcmp(phrases, "q") != 0) {  //Do the tokenizing if user doesn't input 'q'
++			nextPhrase = strtok(phrases, ",");  //use of tokenizing function to tokenize the input by delimiter ','(comma)
++			phrasesCounter = 1;  //Count the words, start with 1
++			while (nextPhrase) {  //A loop for printing tokenized phrases unless no more are found
++				printf("Phrase #%d is \'%s\'\n", phrasesCounter++, nextPhrase); //Print the tokenized phrases
++				nextPhrase = strtok(NULL, ",");  //Get the next tokenized phrases
+ 			}
+ 		}
+-	} while (strcmp(words, "q") != 0);  //infinite loop unless 'q' is input by user
++	} while (strcmp(phrases, "q") != 0);  //infinite loop unless 'q' is input by user
+ 	printf("*** End of Tokenizing Words Demo ***\n\n");
+ 
+-
+-/* Version 2 */
+-//>> insert here
+-
+-
+ /* Version 3 */
+ //>> insert here
+ 
+diff --git a/tokenizing_testing.txt b/tokenizing_testing.txt
+index a16c7b4..661a37a 100644
+--- a/tokenizing_testing.txt
++++ b/tokenizing_testing.txt
+@@ -48,4 +48,60 @@ q Hello World!
+ Word #1 is 'q'
+ Word #2 is 'Hello'
+ Word #3 is 'World!'
++*** End of Tokenizing Words Demo ***
++
++
++
++------Version 2-------
++Test case 1:
++*** Start of Tokenizing Words Demo ***
++Type a few words separated by space (q - to quit):
++Hello, World!!, 123, 1,2,3
++Phrase #1 is 'Hello'
++Phrase #2 is ' World!!'
++Phrase #3 is ' 123'
++Phrase #4 is ' 1'
++Phrase #5 is '2'
++Phrase #6 is '3'
++Type a few words separated by space (q - to quit):
++
++
++Test case 2:
++Type a few words separated by space (q - to quit):
++Hi123,,,,,,,,,,,,,,,,,Hi123
++Phrase #1 is 'Hi123'
++Phrase #2 is 'Hi123'
++Type a few words separated by space (q - to quit):
++
++
++Test case 3:
++Type a few words separated by space (q - to quit):
++,,,,,,,,,
++Type a few words separated by space (q - to quit):
++
++
++Test case 4:
++Type a few words separated by space (q - to quit):
++1111111110111111111011111111101111111110111111111011111111101111111110111111111011111111101111111110111111111011111111101111111110111111111011111111101111111110111111111011111111101111111110111111111011111111101111111110111111111011111111101111111110111111111011111111101111111110111111111011111111101111111110
++Phrase #1 is '1111111110111111111011111111101111111110111111111011111111101111111110111111111011111111101111111110111111111011111111101111111110111111111011111111101111111110111111111011111111101111111110111111111011111111101111111110111111111011111111101111111110111111111011111111101111111110111111111011111111'
++Type a few words separated by space (q - to quit):
++Phrase #1 is '01111111110'
++Type a few words separated by space (q - to quit):
++
++
++Test case 5:
++Type a few words separated by space (q - to quit):
++1111111110111111111011111111101111111110111111111011111111101111111110111111111011111111101111111110,11111111101111111110111111111011111111101111111110111111111011111111101111111110111111111011111111101111111110,1111111110111111111011111111101111111110111111111011111111101111111110111111111011111111101111111110
++Phrase #1 is '1111111110111111111011111111101111111110111111111011111111101111111110111111111011111111101111111110'
++Phrase #2 is '11111111101111111110111111111011111111101111111110111111111011111111101111111110111111111011111111101111111110'
++Phrase #3 is '11111111101111111110111111111011111111101111111110111111111011111111101111111110111111'
++Type a few words separated by space (q - to quit):
++Phrase #1 is '1101111111110'
++Type a few words separated by space (q - to quit):
++
++
++Test case 6:Type a few words separated by space (q - to quit):
++q,123
++Phrase #1 is 'q'
++Phrase #2 is '123'
+ *** End of Tokenizing Words Demo ***
+\ No newline at end of file
+
+commit a7217e5b29a1713d77304914dc26e8f148d2d219
+Author: Daven <whchau1@myseneca.ca>
+Date:   Wed Dec 6 02:33:09 2023 -0500
+
+    V1 - modified comment
+
+diff --git a/tokenizing-test-cases.xlsx b/tokenizing-test-cases.xlsx
+index ea26f7c..8f78ee1 100644
+Binary files a/tokenizing-test-cases.xlsx and b/tokenizing-test-cases.xlsx differ
+diff --git a/tokenizing.c b/tokenizing.c
+index 3cb2bef..f0b6640 100644
+--- a/tokenizing.c
++++ b/tokenizing.c
+@@ -2,7 +2,7 @@
+ Author: Wing Ho Chau
+ Email: myseneca@myseneca.ca
+ ID: 150924231
+-Date Written: 11-27-2023
++Date Written: 12-1-2023
+ Course: CPR101.NNN
+ Final Project
+ */
+@@ -13,16 +13,16 @@ Final Project
+ #include "tokenizing.h"  //includes header file to point libaraies
+ 
+ void tokenizing() {
+-/* Version 1 */
++	/* Version 1 */
+ 	printf("*** Start of Tokenizing Words Demo ***\n");
+-	char words[BUFFER_SIZE];  //words will be used for user input and is the argument for 
+-	char* nextWord = NULL;  //
+-	int wordsCounter;  //wordsCounter will be used to count how many words are in the delimited input
+-	
++	char words[BUFFER_SIZE];  //words will be used for user input
++	char* nextWord = NULL;  //nextWord is an array to store the return of tokenized strings.
++	int wordsCounter;  //wordsCounter will be used to count how many tokenized words are in the delimited input
++
+ 	do {
+ 		printf("Type a few words separated by space (q - to quit):\n");
+ 		fgets(words, BUFFER_SIZE, stdin);  //receives input from user and store in words[]
+-		words[strlen(words) - 1] = '\0';  //Put a null terminator to the end the array
++		words[strlen(words) - 1] = '\0';  //Put a null terminator to the end of array
+ 		if (strcmp(words, "q") != 0) {  //Do the tokenizing if user doesn't input 'q'
+ 			nextWord = strtok(words, " ");  //use of tokenizing function to tokenize the word by delimiter 'whitespace'
+ 			wordsCounter = 1;  //Count the words, start with 1
+
+commit e3de54364152de16384aa516d22d65168a6685d1
+Author: Daven <whchau1@myseneca.ca>
+Date:   Wed Dec 6 01:56:41 2023 -0500
+
+    V1
+
+diff --git a/tokenizing-test-cases.xlsx b/tokenizing-test-cases.xlsx
+new file mode 100644
+index 0000000..ea26f7c
+Binary files /dev/null and b/tokenizing-test-cases.xlsx differ
+diff --git a/tokenizing.c b/tokenizing.c
+new file mode 100644
+index 0000000..3cb2bef
+--- /dev/null
++++ b/tokenizing.c
+@@ -0,0 +1,46 @@
++/*
++Author: Wing Ho Chau
++Email: myseneca@myseneca.ca
++ID: 150924231
++Date Written: 11-27-2023
++Course: CPR101.NNN
++Final Project
++*/
++
++// TOKENIZING MODULE SOURCE
++#define _CRT_SECURE_NO_WARNINGS  
++#define BUFFER_SIZE 300  //Sets how many letters the user can input.
++#include "tokenizing.h"  //includes header file to point libaraies
++
++void tokenizing() {
++/* Version 1 */
++	printf("*** Start of Tokenizing Words Demo ***\n");
++	char words[BUFFER_SIZE];  //words will be used for user input and is the argument for 
++	char* nextWord = NULL;  //
++	int wordsCounter;  //wordsCounter will be used to count how many words are in the delimited input
++	
++	do {
++		printf("Type a few words separated by space (q - to quit):\n");
++		fgets(words, BUFFER_SIZE, stdin);  //receives input from user and store in words[]
++		words[strlen(words) - 1] = '\0';  //Put a null terminator to the end the array
++		if (strcmp(words, "q") != 0) {  //Do the tokenizing if user doesn't input 'q'
++			nextWord = strtok(words, " ");  //use of tokenizing function to tokenize the word by delimiter 'whitespace'
++			wordsCounter = 1;  //Count the words, start with 1
++			while (nextWord) {  //A loop for printing tokenized words unless no more are found
++				printf("Word #%d is \'%s\'\n", wordsCounter++, nextWord); //Print the tokenized words
++				nextWord = strtok(NULL, " ");  //Get the next tokenized words
++			}
++		}
++	} while (strcmp(words, "q") != 0);  //infinite loop unless 'q' is input by user
++	printf("*** End of Tokenizing Words Demo ***\n\n");
++
++
++/* Version 2 */
++//>> insert here
++
++
++/* Version 3 */
++//>> insert here
++
++
++}
+\ No newline at end of file
+diff --git a/tokenizing.h b/tokenizing.h
+new file mode 100644
+index 0000000..62e8745
+--- /dev/null
++++ b/tokenizing.h
+@@ -0,0 +1,7 @@
++//TOKENIZING MODULE HEADER
++#ifndef _TOKENIZING_H_
++#define _TOKENIZING_H_
++#include <stdio.h>
++#include <string.h>
++void tokenizing(void);
++#endif
+diff --git a/tokenizing_testing.txt b/tokenizing_testing.txt
+new file mode 100644
+index 0000000..a16c7b4
+--- /dev/null
++++ b/tokenizing_testing.txt
+@@ -0,0 +1,51 @@
++Tokenizing testing
++
++------Version 1-------
++Test case 1:
++*** Start of Tokenizing Words Demo ***
++Type a few words separated by space (q - to quit):
++Hello World! Today is 11 / 28 / 2023
++Word #1 is 'Hello'
++Word #2 is 'World!'
++Word #3 is 'Today'
++Word #4 is 'is'
++Word #5 is '11'
++Word #6 is '/'
++Word #7 is '28'
++Word #8 is '/'
++Word #9 is '2023'
++Type a few words separated by space (q - to quit):
++
++
++Test case 2:
++Type a few words separated by space (q - to quit):
++
++Type a few words separated by space (q - to quit):
++
++
++Test case 3:
++Type a few words separated by space (q - to quit):
++ 
++Type a few words separated by space (q - to quit):
++
++
++Test case 4:
++Type a few words separated by space (q - to quit):
++Hello     World!
++Word #1 is 'Hello'
++Word #2 is 'World!'
++Type a few words separated by space (q - to quit):
++
++
++Test case 5:
++Type a few words separated by space (q - to quit):
++q
++*** End of Tokenizing Words Demo ***
++
++Test case 6:
++Type a few words separated by space (q - to quit):
++q Hello World!
++Word #1 is 'q'
++Word #2 is 'Hello'
++Word #3 is 'World!'
++*** End of Tokenizing Words Demo ***
+\ No newline at end of file
