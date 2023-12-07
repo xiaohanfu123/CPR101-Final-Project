@@ -1,4 +1,4 @@
-Manipulating Testing Records
+Manipulating Testing Record
 
 -------------- Version 1: String Concatenate -------------------------------
 >> Test 1: (Normal case)

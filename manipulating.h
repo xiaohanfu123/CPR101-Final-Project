@@ -10,7 +10,7 @@
 // Define a constant for maximum length of input string 
 #define BUFFER_SIZE 32
 
-// manipulating prototype: Allow users to manipulate string input
+// manipulating prototype: Allow users to manipulate the string input
 //Including: string concatenate
 void manipulating(void);
 

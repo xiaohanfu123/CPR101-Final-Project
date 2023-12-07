@@ -8,7 +8,7 @@ Course: CPR101.NNN
 Final Project
 */
 
-/* The costomized library "manipulating.h" header file provides :
+/* The costom library "manipulating.h" header file provides :
     - 2 standard libraies: stdio.h and string.h
     - Defined macro 'BUFFER_SIZE' setting the max string length for manipulation
     - Prototype for function manipulating
