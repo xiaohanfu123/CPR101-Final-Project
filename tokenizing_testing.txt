@@ -105,3 +105,79 @@ q,123
 Phrase #1 is 'q'
 Phrase #2 is '123'
 *** End of Tokenizing Words Demo ***
+
+
+------Version 3-------
+Test case 1:
+*** Start of Tokenizing Words Demo ***
+Type a few words separated by space (q - to quit):
+I am here. I am going to test this program. This is test case 1.
+Sentence #1 is 'I am here'
+Sentence #2 is ' I am going to test this program'
+Sentence #3 is ' This is test case 1'
+Type a few words separated by space (q - to quit):
+
+
+Test case 2:
+Type a few words separated by space (q - to quit):
+This is test case 2, and it has no period in the sentences
+Sentence #1 is 'This is test case 2, and it has no period in the sentences'
+Type a few words separated by space (q - to quit):
+
+
+Test case 3:
+Type a few words separated by space (q - to quit):
+This is test case 3.....I put five period between sentences
+Sentence #1 is 'This is test case 3'
+Sentence #2 is 'I put five period between sentences'
+Type a few words separated by space (q - to quit):
+
+
+Test case 4:
+Type a few words separated by space (q - to quit):
+This is sentence 1.This is sentence 2.This is sentence 3.This is sentence 4.This is sentence 5.This is sentence 6.This is sentence 7.This is sentence 8.This is sentence 9.This is sentence 10.This is sentence 11.This is sentence 12.This is sentence 13.This is sentence 14.This is sentence 15.This is sentence 16.This is sentence 17.This is sentence 18.This is sentence 19.This is sentence 20.This is sentence 21.This is sentence 22.This is sentence 23.This is sentence 24
+Sentence #1 is 'This is sentence 1'
+Sentence #2 is 'This is sentence 2'
+Sentence #3 is 'This is sentence 3'
+Sentence #4 is 'This is sentence 4'
+Sentence #5 is 'This is sentence 5'
+Sentence #6 is 'This is sentence 6'
+Sentence #7 is 'This is sentence 7'
+Sentence #8 is 'This is sentence 8'
+Sentence #9 is 'This is sentence 9'
+Sentence #10 is 'This is sentence 10'
+Sentence #11 is 'This is sentence 11'
+Sentence #12 is 'This is sentence 12'
+Sentence #13 is 'This is sentence 13'
+Sentence #14 is 'This is sentence 14'
+Sentence #15 is 'This is sentence 15'
+Sentence #16 is 'This is'
+Type a few words separated by space (q - to quit):
+Sentence #1 is 'sentence 16'
+Sentence #2 is 'This is sentence 17'
+Sentence #3 is 'This is sentence 18'
+Sentence #4 is 'This is sentence 19'
+Sentence #5 is 'This is sentence 20'
+Sentence #6 is 'This is sentence 21'
+Sentence #7 is 'This is sentence 22'
+Sentence #8 is 'This is sentence 23'
+Sentence #9 is 'This is sentence 24'
+Type a few words separated by space (q - to quit):
+
+
+Test case 5:
+Type a few words separated by space (q - to quit):
+question one. question two. answer
+Sentence #1 is 'question one'
+Sentence #2 is ' question two'
+Sentence #3 is ' answer'
+Type a few words separated by space (q - to quit):
+
+
+Test csae 6:
+Type a few words separated by space (q - to quit):
+q. This is test case 6. If the promgram is correct, the loop with continues.
+Sentence #1 is 'q'
+Sentence #2 is ' This is test case 6'
+Sentence #3 is ' If the promgram is correct, the loop with continues'
+*** End of Tokenizing Words Demo ***
